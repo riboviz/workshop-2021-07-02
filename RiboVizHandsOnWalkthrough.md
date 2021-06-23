@@ -16,7 +16,7 @@ I'll start this hands-on session by leading you through running RiboViz on the "
 
 As I do this I'll give an introduction to how RiboViz is configured, how it is run, and the outputs it produces. This also provides an opportunity to resolve any last minute issues you may have with your local installation of RiboViz.
 
-We'll be using the current version of RiboViz in our Git repository. This is release 2.2 of RiboViz in all but name (we have some final tests to do before the official release).
+We'll be using the current version of RiboViz in our Git repository, [riboviz/riboviz](https://github.com/riboviz/riboviz) on GitHub. This is release 2.1 of RiboViz in all but name (we have some final tests to do before the official release).
 
 ### Configuration
 
@@ -248,7 +248,7 @@ pos_sp_nt_freq.tsv
 
 There are myriad files with data from the processing of the sample. These include a BAM file of reads mapped to transcripts, which can be directly used in genome browsers, alignments within an HDF5 file, tab-separated values files that can be used in your own custom analyses and complementary PDF files which contain graphs of this data.
 
-However, we'll look at the HTML file. `WTnone_output_report.html`. This is a new feature for RiboViz 2.2 by which the outputs from the analysis are summarised as a browsable HTML document.
+However, we'll look at the HTML file. `WTnone_output_report.html`. This is a new feature for RiboViz 2.1 by which the outputs from the analysis are summarised as a browsable HTML document.
 
 Let's open that document within a web browser and look at its contents.
 
@@ -341,7 +341,7 @@ These files are also used when restarting a workflow using the `-resume` option.
 
 ## Run on downsampled dataset
 
-The "vignette" dataset is provided with RiboViz. We'll now look at preparing another dataset to be analysed by RiboViz. This time we'll download another downsampled data and a configuration file, validate our configuration and run RiboViz.
+The "vignette" dataset is provided with RiboViz. We'll now look at preparing another dataset to be analysed by RiboViz. This time we'll download another downsampled dataset and a configuration file, validate our configuration and run RiboViz.
 
 TODO:
 
@@ -376,6 +376,6 @@ TODO:
 
 **Question: Does anyone have any questions on running RiboViz?**
 
-Full information on configuring and running RiboViz is available at https://github.com/riboviz/riboviz.
+Full information on configuring and running RiboViz is available at [riboviz/riboviz](https://github.com/riboviz/riboviz) on GitHub. We have a [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository which is library of pre-existing configuration files produced by the RiboViz project.
 
 Thank you!
