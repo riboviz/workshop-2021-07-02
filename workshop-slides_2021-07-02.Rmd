@@ -1,9 +1,10 @@
 ---
-title: "Experts session: Hands-on Ribo-Seq workflows - RiboViz"
+title: 'Experts session: Hands-on Ribo-Seq workflows - RiboViz'
 author: "Riboviz Team"
 date: "02/07/2021"
 output:
-  ioslides_presentation
+  ioslides_presentation: default
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
