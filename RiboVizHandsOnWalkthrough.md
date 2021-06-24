@@ -10,7 +10,7 @@ Mike Jackson
 
 ---
 
-## Run on "vignette"
+## Run RiboViz on "vignette" dataset
 
 In this hands-on session, I will lead you through running RiboViz on a dataset, explaining how RiboViz is configured and run and the various outputs that it produces.
 
@@ -59,7 +59,7 @@ While the number of configuration parameters may seem daunting, please be reassu
 
 **Question: Does anyone have any questions about the configuration?**
 
-### RiboViz directory
+### RiboViz directory contents
 
 Now, let's look at the the `riboviz` directory itself.
 
@@ -272,9 +272,11 @@ orf_map_clean.bam      orf_map.sam        trim.fq
 orf_map_clean.bam.bai  rRNA_map.sam       unaligned.fq
 ```
 
-These directories does not contain the files themselves, but, instead so-called symbolic links to these files which are actually located within a Nextflow-specific directory which I'll describe in a moment. However, these symbolic links makes it appear that these files themselves are in these directories, and they can be used as if they are, and avoids the need to have multiple copies of the files within your file system.
+These directories does not contain the files themselves, but, instead so-called symbolic links to these files which are actually located within a Nextflow-specific directory which I'll describe shortly. However, these symbolic links makes it appear that these files themselves are in these directories, and they can be used as if they are, and avoids the need to have multiple copies of the files within your file system.
 
-The files in the workflow output directory, specified in the `dir_out` configuration parameter, are not symbolic links but are copies of the files created within Nextflow's `work/` directory  as you may want to keep these files for later use. If you want copies of, rather than symbolic links to, index and temporary files then there is a `publish_index_tmp` configuration parameter that allows you to request this.
+The files in the workflow output directory, specified in the `dir_out` configuration parameter, were also originally localed within a Nextflow-specific directory. However, these are not symbolic links but copies of those files, as you may want to keep these files for later use.
+
+If you want copies of, rather than symbolic links to, index and temporary files then there is a `publish_index_tmp` configuration parameter that allows you to request this.
 
 **Question: Does anyone have any questions about these index and temporary files?**
 
@@ -282,7 +284,7 @@ The files in the workflow output directory, specified in the `dir_out` configura
 
 ## Troubleshooting a workflow
 
-Our workflow successfully completed. If it had failed we'd want to troubleshoot as to why it failed. Nextflow logs data about each workflow that it runs and we can explore these logs, for both successful and failed workflows, using the `nextflow log` command.
+Our workflow successfully completed. If it had failed, then we'd want to troubleshoot as to why it failed. Nextflow logs data about each workflow that it runs and we can explore these logs, for both successful and failed workflows, using the `nextflow log` command.
 
 For example, to see the instances of all the processes we run, we can use `nextflow log` with our workflow run name, that we noted down earlier, to show both process names and the names of their instances:
 
@@ -403,7 +405,7 @@ The invocation of each process has the same identifier as the previous run and t
 
 ### Nextflow's files 
 
-Now, what is this Nextflow-specific directory I mentioned. When Nextflow runs it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command to be invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
+Now, what is this Nextflow-specific directory I've mentioned and where does `nextflow log` get its information from? When Nextflow runs it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command to be invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
 
 ```console
 $ ls work
