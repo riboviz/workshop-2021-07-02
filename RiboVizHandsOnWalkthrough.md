@@ -12,11 +12,11 @@ Mike Jackson
 
 ## Run on "vignette"
 
-I'll start this hands-on session by leading you through running RiboViz on the "vignette", the downsampled *Saccharomyces cerevisiae* (yeast) dataset that is provided with RiboViz.
+In this hands-on session, I will lead you through running RiboViz on a dataset, explaining how RiboViz is configured and run and the various outputs that it produces.
 
-As I do this I'll give an introduction to how RiboViz is configured, how it is run, and the outputs it produces. This also provides an opportunity to resolve any last minute issues you may have with your local installation of RiboViz.
+We'll be using the current version of RiboViz from our Git repository, [riboviz/riboviz](https://github.com/riboviz/riboviz) on GitHub. This is release 2.1 of RiboViz in all but name (we have some final tests to do before the official release).
 
-We'll be using the current version of RiboViz in our Git repository, [riboviz/riboviz](https://github.com/riboviz/riboviz) on GitHub. This is release 2.1 of RiboViz in all but name (we have some final tests to do before the official release).
+The dataset we'll use is the "vignette", the downsampled *Saccharomyces cerevisiae* (yeast) dataset that is provided with RiboViz. This is a dataset that we prepared for testing and demonstration purposes. Our documentation on the [vignette](https://github.com/riboviz/riboviz/blob/main/docs/user/run-vignette.md) which you can look at later, describes the provenance of all the data files used in the "vignette". To complement RiboViz, we provide an [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository on GitHub which is a library of configuration files produced by the RiboViz project to be run on full-size datasets for various organisms.
 
 ### Configuration
 
@@ -112,7 +112,7 @@ Validated configuration
 
 This shows the Nextflow version and a unique name and identifier for this run of RiboViz. `samples_dir`, `organisms_dir`, `data_dir` can be ignored. These are only used if using environment variables to specify the locations of input directories.
 
-The `No such sample file (NotHere)` error can be ignored since we deliberately include a missing sample file in the vignette configuration.
+The `No such sample file (NotHere)` error can be ignored since we deliberately include a missing sample file in the "vignette" configuration.
 
 `Validated configuration` was printed even though one sample file could not be found. This is because the configuration specifies 3 sample files and could still successfully run if one of these is missing. If all 3 were missing then the validation would fail.
 
@@ -339,43 +339,10 @@ These files are also used when restarting a workflow using the `-resume` option.
 
 ---
 
-## Run on downsampled dataset
+## Questions
 
-The "vignette" dataset is provided with RiboViz. We'll now look at preparing another dataset to be analysed by RiboViz. This time we'll download another downsampled dataset and a configuration file, validate our configuration and run RiboViz.
+**Question: Does anyone have any questions about what has been covered in this session?**
 
-TODO:
-
-* Download data and config file.
-* Set up directories.
-* Ensure that `prep_riboviz.nf` can find these inputs, using `--validate-only`:
-* Run, ideally takes under 5 minutes on a laptop.
-* Refer to documentation, especially troubleshooting
-
-```console
-$ nextflow run prep_riboviz.nf -params-file <TODO>.yaml --validate_only
-$ nextflow run -ansi-log false prep_riboviz.nf -params-file <TODO>.yaml
-```
-
-**Question: Does anyone have any questions about preparing the data, configuring RiboViz or running the workflow?**
-
-
----
-
-## Interpreting RiboViz outputs revisited
-
-TODO:
-
-* Show and talk through `.html` output from the downsampled dataset.
-* Have one example from another full size dataset to compare?
-
-**Question: Does anyone have any questions about the outputs?**
-
----
-
-## Questions on running RiboViz
-
-**Question: Does anyone have any questions on running RiboViz?**
-
-Full information on configuring and running RiboViz is available at [riboviz/riboviz](https://github.com/riboviz/riboviz) on GitHub. We have a [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository which is library of pre-existing configuration files produced by the RiboViz project.
+Full information on configuring and running RiboViz is available within our Git repository, [riboviz/riboviz](https://github.com/riboviz/riboviz), on GitHub. As I mentioned previously, to complement RiboViz, we provide an [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository on GitHub which is a library of configuration files produced by the RiboViz project to be run on full-size datasets for various organisms. You are encouraged to explore these and try these out and contributions of configurations for new datasets are most welcome.
 
 Thank you!
