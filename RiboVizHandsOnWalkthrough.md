@@ -55,6 +55,8 @@ Finally, the configuration file also specifies the location to where output file
 * Temporary files, `dir_tmp`.
 * And, most important of all, output files, `dir_out`.
 
+While the number of configuration parameters may seem daunting, please be reassured that you would never write a configuration file from scratch. Rather, you would take one that you know already works for an existing dataset, such as this one for the "vignette" or one of those from the [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository on GitHub and customise it for your own dataset. We also have documentation on [Configuring the RiboViz workflow](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-config.md) which describes every configuration parameter. As many have remarked, in various ways, "a few hours of trial and error can save you several minutes of looking at the documentation".
+
 **Question: Does anyone have any questions about the configuration?**
 
 ### RiboViz directory
