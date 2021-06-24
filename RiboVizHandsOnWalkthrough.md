@@ -178,7 +178,7 @@ The workflow first builds HISAT2 indices for the ORF and rRNA FASTA files. It th
 
 Each step in the workflow is implemented as a Nextflow process. Sample-independent processes are invoked once, for example `buildIndicesORF` and `buildIndicesrRNA`. Sample-specific processes, for example, `cutAdapters`, are invoked once per sample. Some invocations of processes are labelled with indices and sample names to make it clearer what that specific process is doing. For example, `collateTpms`, which aggregates data from all the samples, is labelled with all the sample identifiers.
 
-Again, the workflow run has a unique name, for me this is `modest_shaw`. Yours will differ. Take a note of the run name as we'll be using this shortly.
+Again, the workflow run has a unique name, for my run above this was `modest_shaw`. Yours will differ. Take a note of the run name as we'll be using this shortly.
 
 If we had not provided the `-ansi-log false` parameter then sample-specific steps would be combined within the display for a more succinct visualisation. For example we'd only see one `cutAdapters` step shown and this would show the status of running `cutadapt` on `WTnone` and then `WT3AT`, or vice versa. I prefer seeing each sample-specific step explicitly.
 
@@ -244,16 +244,14 @@ $ nextflow log modest_shaw -f script,exit -filter "name == 'cutAdapters (WTnone)
         	0
 ```
 
-Here we have specified that we want `script` and `exit` fields from the log relating to the invocation of a process that had the name `cutAdapters (WTnone)`.
-
-This shows the invocation of the `cutadapt` tool with the parameters that were passed to it and the exit code, which is 0 as `cutadapt` completed successfully. We can also browse any output and error messages printed by `cutadapt` when it ran, by asking for the `stdout` and `stderr` fields from the log:
+Here we have specified that we want `script` and `exit` fields from the log relating to the invocation of a process that had the name `cutAdapters (WTnone)`. We are shown command used to invoke the `cutadapt` tool with the parameters that were passed to it, and its exit code, which is 0 as `cutadapt` completed successfully. We can also browse any output and error messages printed by `cutadapt` when it ran, by asking for the `stdout` and `stderr` fields from the log:
 
 ```console
 $ nextflow log modest_shaw -f stdout,stderr -filter "name == 'cutAdapters (WTnone)'"
 This is cutadapt 1.18 with Python 3.7.6Command line parameters: --trim-n -O 1 -m 5 -a CTGTAGGCACC -o trim.fq SRR1042855_s1mi.fastq.gz -j 0Processing reads on 4 cores in single-end mode ...Finished in 7.35 s (8 us/read; 7.87 M reads/minute).-
 ```
 
-Only the first few lines of the output are shown. There were no error messages so `-` is displayed. We'll see shortly how to view the all the output and error messages captured by Nextflow.
+Only the first few lines of the output are shown. There were no error messages so `-` is displayed. We'll see shortly how to view the all the output and error messages captured for a step by Nextflow.
 
 If our workflow failed and we wanted to see the names of the failed steps, we can filter on the `status` field for the workflow:
 
@@ -271,6 +269,44 @@ If a workflow fails then Nextflow supports a `-resume` feature which allows the 
 
 ```console
 $ nextflow run -ansi-log false prep_riboviz.nf -params-file vignette/vignette_config.yaml -resume
+N E X T F L O W  ~  version 20.04.1
+Launching `prep_riboviz.nf` [berserk_banach] - revision: 6c6670470d
+samples_dir: .
+organisms_dir: .
+data_dir: .
+No such sample file (NotHere): example_missing_file.fastq.gz
+[3d/5bcc67] Cached process > cutAdapters (WTnone)
+[7e/e093a6] Cached process > cutAdapters (WT3AT)
+[42/b1c9a2] Cached process > buildIndicesrRNA (yeast_rRNA)
+[0f/0757fc] Cached process > buildIndicesORF (YAL_CDS_w_250)
+[e9/5f318c] Cached process > hisat2rRNA (WTnone)
+[8d/1ecb5d] Cached process > hisat2rRNA (WT3AT)
+[2d/0330b5] Cached process > hisat2ORF (WT3AT)
+[f5/a34897] Cached process > hisat2ORF (WTnone)
+[e4/850912] Cached process > createVizParamsConfigFile
+[11/a2c59f] Cached process > trim5pMismatches (WTnone)
+[02/5594ad] Cached process > trim5pMismatches (WT3AT)
+[91/3ad140] Cached process > samViewSort (WT3AT)
+[7e/2579c7] Cached process > samViewSort (WTnone)
+[60/796bd2] Cached process > outputBams (WT3AT)
+[d2/68d6aa] Cached process > outputBams (WTnone)
+[e2/254948] Cached process > makeBedgraphs (WT3AT)
+[53/5bee02] Cached process > makeBedgraphs (WTnone)
+[16/26d72f] Cached process > bamToH5 (WTnone)
+[14/154ad6] Cached process > bamToH5 (WT3AT)
+[e1/bebe80] Cached process > generateStatsFigs (WTnone)
+[b0/013c22] Cached process > generateStatsFigs (WT3AT)
+Finished processing sample: WTnone
+Finished processing sample: WT3AT
+[69/1f6794] Cached process > renameTpms (WTnone)
+[a1/6eb17a] Cached process > renameTpms (WT3AT)
+[a1/b61f46] Cached process > staticHTML (WTnone)
+Finished visualising sample: WTnone
+[b0/5a6872] Cached process > staticHTML (WT3AT)
+Finished visualising sample: WT3AT
+[93/46c33b] Cached process > collateTpms (WTnone, WT3AT)
+[b8/11a56c] Cached process > countReads
+Workflow finished! (OK)
 ```
 
 The invocation of each process has the same identifier as the previous run and the output now shows `Cached process`. This means that the workflow is reusing the outputs computed for each step in the previous run. Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run. We'll see how this is possible shortly.
@@ -401,7 +437,7 @@ This is the actual directory within which Nextflow ran `cutadapt` on sample `WTn
 
 The output from applying `cutadapt` in the sample's FASTQ file, `trim.fq` is also in this directory.
 
-`.command.sh` contains the command that Nextflow ran and `.exitcode` contains the exit code from the command. `.command.out` and `.command.err` contain any output or error messages printed when the above command was run. The contents of these files were what we saw when running `nextflow log` to access the `script`, `exit`, `stdout` and `stderr` log fields earlier. I mentioned earlier that only the first few lines of the output and error messages captured were displayed by `nextflow log`. If we need to see their entire contents we can view these, for example:
+`.command.sh` contains the invocation of `cutadapt` that Nextflow ran and `.exitcode` contains the exit code from the command. `.command.out` and `.command.err` contain any output or error messages printed when the above command was run. The contents of these files were what we saw when running `nextflow log` to access the `script`, `exit`, `stdout` and `stderr` log fields earlier. I mentioned earlier that only the first few lines of the output and error messages captured were displayed by `nextflow log`. If we need to see their entire contents we can view these, for example:
 
 ```console
 $ cat /home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90/.command.out 
