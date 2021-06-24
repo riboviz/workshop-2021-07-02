@@ -101,7 +101,7 @@ All going well, you should see:
 
 ```
 N E X T F L O W  ~  version 20.04.1
-Launching `prep_riboviz.nf` [nauseous_boyd] - revision: 6c6670470d
+Launching `prep_riboviz.nf` [fervent_volta] - revision: 6c6670470d
 Validating configuration only
 samples_dir: .
 organisms_dir: .
@@ -112,7 +112,7 @@ Validated configuration
 
 **Question: Does everyone see that? Does anyone have any problems?**
 
-This shows the Nextflow version and a unique name and identifier for this run of RiboViz. `samples_dir`, `organisms_dir`, `data_dir` can be ignored. These are only used if using environment variables to specify the locations of input directories.
+This shows the Nextflow version and a unique auto-generated name and identifier for this run of RiboViz. Yours will differ from mine. As we'll see shortly, these unique names are useful when it comes to troubleshooting. `samples_dir`, `organisms_dir`, `data_dir` can be ignored. These are only used if using environment variables to specify the locations of input directories.
 
 The `No such sample file (NotHere)` error can be ignored since we deliberately include a missing sample file in the "vignette" configuration.
 
@@ -133,41 +133,42 @@ This is the same invocation as previously, minus `--validate_only` and with an  
 All going well, you should see:
 
 ```
+$ nextflow run -ansi-log false prep_riboviz.nf -params-file vignette/vignette_config.yaml
 N E X T F L O W  ~  version 20.04.1
-Launching `prep_riboviz.nf` [pedantic_woese] - revision: 6c6670470d
+Launching `prep_riboviz.nf` [modest_shaw] - revision: 6c6670470d
 samples_dir: .
 organisms_dir: .
 data_dir: .
 No such sample file (NotHere): example_missing_file.fastq.gz
-[33/5699e6] Submitted process > buildIndicesORF (YAL_CDS_w_250)
-[80/b8d009] Submitted process > cutAdapters (WTnone)
-[c0/8d2098] Submitted process > buildIndicesrRNA (yeast_rRNA)
-[43/780ea7] Submitted process > cutAdapters (WT3AT)
-[3f/00dfe9] Submitted process > createVizParamsConfigFile
-[65/1316d1] Submitted process > hisat2rRNA (WTnone)
-[f1/e44315] Submitted process > hisat2rRNA (WT3AT)
-[23/5707fa] Submitted process > hisat2ORF (WTnone)
-[c6/756098] Submitted process > trim5pMismatches (WTnone)
-[99/28641d] Submitted process > samViewSort (WTnone)
-[28/8963de] Submitted process > outputBams (WTnone)
-[95/797add] Submitted process > makeBedgraphs (WTnone)
-[ee/7c540d] Submitted process > bamToH5 (WTnone)
-[92/e5f8c2] Submitted process > hisat2ORF (WT3AT)
-[d1/806db1] Submitted process > trim5pMismatches (WT3AT)
-[c6/b2b184] Submitted process > samViewSort (WT3AT)
-[03/2398b5] Submitted process > outputBams (WT3AT)
-[44/f3b268] Submitted process > makeBedgraphs (WT3AT)
-[bd/2163d2] Submitted process > bamToH5 (WT3AT)
-[0e/d6d03c] Submitted process > generateStatsFigs (WTnone)
-[1a/8bcebe] Submitted process > generateStatsFigs (WT3AT)
+[7e/e093a6] Submitted process > cutAdapters (WT3AT)
+[42/b1c9a2] Submitted process > buildIndicesrRNA (yeast_rRNA)
+[3d/5bcc67] Submitted process > cutAdapters (WTnone)
+[0f/0757fc] Submitted process > buildIndicesORF (YAL_CDS_w_250)
+[e4/850912] Submitted process > createVizParamsConfigFile
+[e9/5f318c] Submitted process > hisat2rRNA (WTnone)
+[8d/1ecb5d] Submitted process > hisat2rRNA (WT3AT)
+[f5/a34897] Submitted process > hisat2ORF (WTnone)
+[11/a2c59f] Submitted process > trim5pMismatches (WTnone)
+[7e/2579c7] Submitted process > samViewSort (WTnone)
+[d2/68d6aa] Submitted process > outputBams (WTnone)
+[53/5bee02] Submitted process > makeBedgraphs (WTnone)
+[16/26d72f] Submitted process > bamToH5 (WTnone)
+[2d/0330b5] Submitted process > hisat2ORF (WT3AT)
+[02/5594ad] Submitted process > trim5pMismatches (WT3AT)
+[91/3ad140] Submitted process > samViewSort (WT3AT)
+[60/796bd2] Submitted process > outputBams (WT3AT)
+[e2/254948] Submitted process > makeBedgraphs (WT3AT)
+[14/154ad6] Submitted process > bamToH5 (WT3AT)
+[e1/bebe80] Submitted process > generateStatsFigs (WTnone)
+[b0/013c22] Submitted process > generateStatsFigs (WT3AT)
 Finished processing sample: WTnone
-[7b/e1ff20] Submitted process > renameTpms (WTnone)
-[05/2c0276] Submitted process > staticHTML (WTnone)
+[69/1f6794] Submitted process > renameTpms (WTnone)
+[a1/b61f46] Submitted process > staticHTML (WTnone)
 Finished processing sample: WT3AT
-[d1/712205] Submitted process > renameTpms (WT3AT)
-[96/3b622b] Submitted process > staticHTML (WT3AT)
-[6c/8aa8a0] Submitted process > collateTpms (WTnone, WT3AT)
-[ac/7f7333] Submitted process > countReads
+[a1/6eb17a] Submitted process > renameTpms (WT3AT)
+[b0/5a6872] Submitted process > staticHTML (WT3AT)
+[93/46c33b] Submitted process > collateTpms (WTnone, WT3AT)
+[b8/11a56c] Submitted process > countReads
 Finished visualising sample: WTnone
 Finished visualising sample: WT3AT
 Workflow finished! (OK)
@@ -175,19 +176,96 @@ Workflow finished! (OK)
 
 The workflow first builds HISAT2 indices for the ORF and rRNA FASTA files. It then, for each sample, cuts out sequencing library adapters, removes rRNA or other contaminating reads by alignment to the rRNA index files, aligns the remaining reads to the ORF index files, trims 5' mismatches from the resulting reads and removes reads with more than 2 mismatches, exports bedgraph files for plus and minus strands, makes length-sensitive alignments, and calculates summary statistics, and analyses and quality control plots for both RPF and mRNA datasets including estimated read counts, reads per base, and transcripts per million for each ORF in each sample. These transcripts per million are then collated across all samples and the number of reads (sequences) processed by specific stages is calculated.
 
-Your process identifiers, for example, `33/5699e6`, will differ from mine.
+Each step in the workflow is implemented as a Nextflow process. Sample-independent processes are invoked once, for example `buildIndicesORF` and `buildIndicesrRNA`. Sample-specific processes, for example, `cutAdapters`, are invoked once per sample. Some invocations of processes are labelled with indices and sample names to make it clearer what that specific process is doing. For example, `collateTpms`, which aggregates data from all the samples, is labelled with all the sample identifiers.
 
-Each process corresponds to a single step in the workflow. Some of these are sample-independent, for example `buildIndicesORF` and `buildIndicesrRNA`. Many of these are sample-specific and are labelled with the sample identifier, for example, `cutAdapters (WTnone)` and `cutAdapters (WT3AT)`. `collateTpms` which aggregates data from all the samples is labelled with all the sample identifiers.
+Again, the workflow run has a unique name, for me this is `modest_shaw`. Yours will differ. Take a note of the run name as we'll be using this shortly.
 
 If we had not provided the `-ansi-log false` parameter then sample-specific steps would be combined within the display for a more succinct visualisation. For example we'd only see one `cutAdapters` step shown and this would show the status of running `cutadapt` on `WTnone` and then `WT3AT`, or vice versa. I prefer seeing each sample-specific step explicitly.
 
 **In your own time, feel free to rerun the workflow but without `-ansi-log false` to see the difference in the output.**
 
-Each process has a unique identifier specific to the current run of the workflow. This is the value delimited by the square brackets on the left. We'll revisit this shortly.
+Each invocation of a process has a unique identifier specific to the current run of the workflow. This is the value delimited by the square brackets on the left. For example, `3d/5bcc67` for `cutAdapters (WTnone)`. Yours will differ from mine. We'll revisit this shortly.
 
 **Question: Does everyone see that? Does anyone have any problems?**
 
 **Question: Does anyone have any questions about running riboviz at this time?**
+
+### Troubleshooting a workflow
+
+Our workflow successfully completed. If it had failed we'd want to troubleshoot as to why it failed. Nextflow logs data about each workflow that it runs and we can explore these logs, for both successful and failed workflows, using the `nextflow log` command.
+
+For example, to see the instances of all the processes we run, we can use `nextflow log` with our workflow run name, that we noted down earlier, to show both process names and the names of their instances:
+
+```console
+$ nextflow log modest_shaw -f process,name
+cutAdapters	cutAdapters (WT3AT)
+buildIndicesrRNA	buildIndicesrRNA (yeast_rRNA)
+cutAdapters	cutAdapters (WTnone)
+buildIndicesORF	buildIndicesORF (YAL_CDS_w_250)
+createVizParamsConfigFile	createVizParamsConfigFile
+hisat2rRNA	hisat2rRNA (WTnone)
+hisat2rRNA	hisat2rRNA (WT3AT)
+hisat2ORF	hisat2ORF (WTnone)
+trim5pMismatches	trim5pMismatches (WTnone)
+samViewSort	samViewSort (WTnone)
+outputBams	outputBams (WTnone)
+makeBedgraphs	makeBedgraphs (WTnone)
+bamToH5	bamToH5 (WTnone)
+hisat2ORF	hisat2ORF (WT3AT)
+trim5pMismatches	trim5pMismatches (WT3AT)
+samViewSort	samViewSort (WT3AT)
+outputBams	outputBams (WT3AT)
+makeBedgraphs	makeBedgraphs (WT3AT)
+bamToH5	bamToH5 (WT3AT)
+generateStatsFigs	generateStatsFigs (WTnone)
+generateStatsFigs	generateStatsFigs (WT3AT)
+renameTpms	renameTpms (WTnone)
+staticHTML	staticHTML (WTnone)
+renameTpms	renameTpms (WT3AT)
+staticHTML	staticHTML (WT3AT)
+collateTpms	collateTpms (WTnone, WT3AT)
+countReads	countReads
+```
+
+If we were only interested in the names of the invocations of the `cutAdapters` process, we'd run:
+
+```console
+$ nextflow log modest_shaw -f name -filter "process == 'cutAdapters'"
+cutAdapters (WT3AT)
+cutAdapters (WTnone)
+```
+
+We can find out information about the invocation of a specific process including the command that was run by Nextflow, and its exit code, as follows:
+
+```console
+$ nextflow log modest_shaw -f script,exit -filter "name == 'cutAdapters (WTnone)'"
+
+        cutadapt --trim-n -O 1 -m 5 -a CTGTAGGCACC             -o trim.fq SRR1042855_s1mi.fastq.gz -j 0
+        	0
+```
+
+Here we have specified that we want `script` and `exit` fields from the log relating to the invocation of a process that had the name `cutAdapters (WTnone)`.
+
+This shows the invocation of the `cutadapt` tool with the parameters that were passed to it and the exit code, which is 0 as `cutadapt` completed successfully. We can also browse any output and error messages printed by `cutadapt` when it ran, by asking for the `stdout` and `stderr` fields from the log:
+
+```console
+$ nextflow log modest_shaw -f stdout,stderr -filter "name == 'cutAdapters (WTnone)'"
+This is cutadapt 1.18 with Python 3.7.6Command line parameters: --trim-n -O 1 -m 5 -a CTGTAGGCACC -o trim.fq SRR1042855_s1mi.fastq.gz -j 0Processing reads on 4 cores in single-end mode ...Finished in 7.35 s (8 us/read; 7.87 M reads/minute).-
+```
+
+Only the first few lines of the output are shown. There were no error messages so `-` is displayed. We'll see shortly how to view the all the output and error messages captured by Nextflow.
+
+If our workflow failed and we wanted to see the names of the failed steps, we can filter on the `status` field for the workflow:
+
+```console
+$ nextflow log modest_shaw -f name -filter "status == 'FAILED'"
+```
+
+As all our steps succeeded, no steps are returned. 
+
+**In your own time, explore `nextflow log`. For more information see Nextflow [Tracing & visualisation](https://www.nextflow.io/docs/latest/tracing.html), `nextflow log -h` and to see the log fields available run `nextlog log -l`.**
+
+### Resuming a failed workflow
 
 If a workflow fails then Nextflow supports a `-resume` feature which allows the workflow to restart from where it failed. This means that the workflow doesn't redo steps that it successfully completed. Though our workflow successfully completed, we can see how this works by rerunning the workflow and adding Nextflow's `-resume` flag:
 
@@ -195,7 +273,7 @@ If a workflow fails then Nextflow supports a `-resume` feature which allows the 
 $ nextflow run -ansi-log false prep_riboviz.nf -params-file vignette/vignette_config.yaml -resume
 ```
 
-Each process has the same identifier as the previous run and also that the output shows `Cached process`. This means that the workflow is reusing the outputs computed for each step. Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run. We'll see how this is possible shortly.
+The invocation of each process has the same identifier as the previous run and the output now shows `Cached process`. This means that the workflow is reusing the outputs computed for each step in the previous run. Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run. We'll see how this is possible shortly.
 
 ---
 
@@ -291,12 +369,21 @@ Now, what is this Nextflow-specific directory I just mentioned? When Nextflow ru
 
 ```console
 $ ls work
+02  11  16  3d  53  69  8d  93  b0  d2  e2  e9
+0f  14  2d  42  60  7e  91  a1  b8  e1  e4  f5
 ```
 
-This may seem cryptic at first. Now, recall, that each process has a unique identifier, the value delimited by the square brackets and printed to the left of the process when the workflow is run. For example `[80/b8d009]` for `Submitted process > cutAdapters (WTnone)`. This identifier specifies a unique subdirectory within `work/`. For example:
+This may seem very cryptic at first. Now, recall, that the invocation of each process has a unique identifier, the value delimited by the square brackets and printed to the left of the process when the workflow is run. This identifier specifies a unique subdirectory within `work/`. However, these identifiers are not very usable, so we can use `nextflow log` to help us:
 
 ```console
-$ ls -a1 work/80/b8d009c7f3d27ac0b56c2a5a327d72/
+$ nextflow log modest_shaw -f hash,workdir -filter "name == 'cutAdapters (WTnone)'"
+3d/5bcc67	/home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90
+```
+
+This shows both the unique identifier of this step (termed a hash) that was shown when we ran the workflow, and also the corresponding subdirectory within `work/` for that step. Note that the hash is a prefix of the subdirectory under `work/`. We can now list its contents, including hidden files prefixed by `.`:
+
+```console
+$ ls -1a /home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90
 .
 ..
 .command.begin
@@ -310,32 +397,28 @@ SRR1042855_s1mi.fastq.gz
 trim.fq
 ```
 
-This is the directory within which Nextflow runs `cutadapt` on sample `WTnone`'s FASTQ file. The directory does not contain the FASTQ file itself, but, instead a symbolic link to the FASTQ file, which is in the directory specified by the `dir_in` parameter. However, this symbolic link makes it appear that the file itself is in this `work/` subdirectory. Again, the use of symbolic links avoids the need to have multiple copies of the files.
+This is the actual directory within which Nextflow ran `cutadapt` on sample `WTnone`'s FASTQ file. The directory does not contain the FASTQ file itself, but, instead a symbolic link to the FASTQ file, which is in the directory specified by the `dir_in` parameter. However, this symbolic link makes it appear that the file itself is in this `work/` subdirectory. Again, the use of symbolic links avoids the need to have multiple copies of the files.
 
 The output from applying `cutadapt` in the sample's FASTQ file, `trim.fq` is also in this directory.
 
-`.command.sh` contains the actual command that Nextflow ran:
+`.command.sh` contains the command that Nextflow ran and `.exitcode` contains the exit code from the command. `.command.out` and `.command.err` contain any output or error messages printed when the above command was run. The contents of these files were what we saw when running `nextflow log` to access the `script`, `exit`, `stdout` and `stderr` log fields earlier. I mentioned earlier that only the first few lines of the output and error messages captured were displayed by `nextflow log`. If we need to see their entire contents we can view these, for example:
 
 ```console
-$ cat work/80/b8d009c7f3d27ac0b56c2a5a327d72/.command.sh 
-#!/bin/bash -ue
-cutadapt --trim-n -O 1 -m 5 -a CTGTAGGCACC             -o trim.fq SRR1042855_s1mi.fastq.gz -j 0
+$ cat /home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90/.command.out 
+This is cutadapt 1.18 with Python 3.7.6
+Command line parameters: --trim-n -O 1 -m 5 -a CTGTAGGCACC -o trim.fq SRR1042855_s1mi.fastq.gz -j 0
+Processing reads on 4 cores in single-end mode ...
+Finished in 7.35 s (8 us/read; 7.87 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                 963,571
+Reads with adapters:                   958,926 (99.5%)
+Reads that were too short:              11,228 (1.2%
+...
 ```
 
-`.exitcode` contains the exit code from the command:
-
-```console
-$ cat work/80/b8d009c7f3d27ac0b56c2a5a327d72/.exitcode 
-0
-```
-
-`.command.log` contains any output or error messages printed when the above command was run:
-
-```console
-$ cat work/80/b8d009c7f3d27ac0b56c2a5a327d72/.command.log
-```
-
-This information can be very useful for debugging. You can also go into that directory and run the `.command.sh` script directly.
+When troubleshooting, we can also go into this directory and run the `.command.sh` script directly.
 
 These files are also used when restarting a workflow using the `-resume` option. If you delete the `work/` folder then `-resume` has no effect and the whole workflow will be rerun.
 
