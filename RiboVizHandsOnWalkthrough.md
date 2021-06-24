@@ -190,7 +190,97 @@ Each invocation of a process has a unique identifier specific to the current run
 
 **Question: Does anyone have any questions about running riboviz at this time?**
 
-### Troubleshooting a workflow
+---
+
+## Interpreting RiboViz outputs
+
+Now that we've looked at how to configure and run RiboViz, let's look at its outputs. 
+
+### Analysis outputs
+
+The outputs from running the RiboViz workflow, the analysis outputs, are put in an output directory. This output directory is defined in the `dir_out` configuration parameter. For the "vignette", this is `vignette/output/`, so let's take a look:
+
+```console
+$ ls vignette/output
+$ ls vignette/output/
+read_counts.tsv  TPMs_collated.tsv  WT3AT  WTnone
+$ ls vignette/output/WTnone/
+3ntframe_bygene_filtered.tsv            pos_sp_rpf_norm_reads.pdf
+3ntframe_bygene.tsv                     pos_sp_rpf_norm_reads.tsv
+3ntframe_propbygene.pdf                 read_lengths.pdf
+3nt_periodicity.pdf                     read_lengths.tsv
+3nt_periodicity.tsv                     sequence_features.tsv
+codon_ribodens_gathered.tsv             startcodon_ribogridbar.pdf
+codon_ribodens.pdf                      startcodon_ribogrid.pdf
+codon_ribodens.tsv                      tpms.tsv
+features.pdf                            WTnone.bam
+gene_position_length_counts_5start.tsv  WTnone.bam.bai
+minus.bedgraph                          WTnone.h5
+plus.bedgraph                           WTnone_output_report.html
+pos_sp_nt_freq.tsv
+```
+
+There is one output files subdirectory for each sample plus data files holding data from the processing of all samples. These latter are `TPMs_collated.tsv` which holds the transcripts per million from each sample and `read_counts.tsv` which summarises the number of reads processed at each step in the workflow for each sample.
+
+Let's take a look at the outputs for a single sample:
+
+```console
+$ ls vignette/output/WTnone
+3ntframe_bygene_filtered.tsv            pos_sp_rpf_norm_reads.pdf
+3ntframe_bygene.tsv                     pos_sp_rpf_norm_reads.tsv
+3ntframe_propbygene.pdf                 read_lengths.pdf
+3nt_periodicity.pdf                     read_lengths.tsv
+3nt_periodicity.tsv                     sequence_features.tsv
+codon_ribodens_gathered.tsv             startcodon_ribogridbar.pdf
+codon_ribodens.pdf                      startcodon_ribogrid.pdf
+codon_ribodens.tsv                      tpms.tsv
+features.pdf                            WTnone.bam
+gene_position_length_counts_5start.tsv  WTnone.bam.bai
+minus.bedgraph                          WTnone.h5
+plus.bedgraph                           WTnone_output_report.html
+pos_sp_nt_freq.tsv
+```
+
+There are myriad files with data from the processing of the sample. These include a BAM file of reads mapped to transcripts, which can be directly used in genome browsers, alignments within an HDF5 file, tab-separated values files that can be used in your own custom analyses and complementary PDF files which contain graphs of this data.
+
+However, we'll look at the HTML file. `WTnone_output_report.html`. This is a new feature for RiboViz 2.1 by which the outputs from the analysis are summarised as a browsable HTML document.
+
+Let's open that document within a web browser and look at its contents.
+
+**Question: Does anyone have any questions about the outputs?**
+
+### Index and temporary files
+
+The RiboViz configuration also specifies directories for index and temporary files, in `dir_index` and `dir_tmp`. These contain files produced during intermediate steps within the workflow and which may or may not be of interest. Let's take a look:
+
+```console
+$ ls vignette/index/
+YAL_CDS_w_250.1.ht2  YAL_CDS_w_250.5.ht2  yeast_rRNA.1.ht2  yeast_rRNA.5.ht2
+YAL_CDS_w_250.2.ht2  YAL_CDS_w_250.6.ht2  yeast_rRNA.2.ht2  yeast_rRNA.6.ht2
+YAL_CDS_w_250.3.ht2  YAL_CDS_w_250.7.ht2  yeast_rRNA.3.ht2  yeast_rRNA.7.ht2
+YAL_CDS_w_250.4.ht2  YAL_CDS_w_250.8.ht2  yeast_rRNA.4.ht2  yeast_rRNA.8.ht2
+$ ls vignette/tmp/
+WT3AT  WTnone
+```
+
+There is one temporary files subdirectory for each sample.
+
+```
+$ ls vignette/tmp/WTnone/
+nonrRNA.fq             orf_map_clean.sam  trim_5p_mismatch.tsv
+orf_map_clean.bam      orf_map.sam        trim.fq
+orf_map_clean.bam.bai  rRNA_map.sam       unaligned.fq
+```
+
+These directories does not contain the files themselves, but, instead so-called symbolic links to these files which are actually located within a Nextflow-specific directory which I'll describe in a moment. However, these symbolic links makes it appear that these files themselves are in these directories, and they can be used as if they are, and avoids the need to have multiple copies of the files within your file system.
+
+The files in the workflow output directory, specified in the `dir_out` configuration parameter, are not symbolic links but are copies of the files created within Nextflow's `work/` directory  as you may want to keep these files for later use. If you want copies of, rather than symbolic links to, index and temporary files then there is a `publish_index_tmp` configuration parameter that allows you to request this.
+
+**Question: Does anyone have any questions about these index and temporary files?**
+
+---
+
+## Troubleshooting a workflow
 
 Our workflow successfully completed. If it had failed we'd want to troubleshoot as to why it failed. Nextflow logs data about each workflow that it runs and we can explore these logs, for both successful and failed workflows, using the `nextflow log` command.
 
@@ -311,97 +401,9 @@ Workflow finished! (OK)
 
 The invocation of each process has the same identifier as the previous run and the output now shows `Cached process`. This means that the workflow is reusing the outputs computed for each step in the previous run. Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run. We'll see how this is possible shortly.
 
----
+### Nextflow's files 
 
-## Interpreting RiboViz outputs
-
-Now that we've looked at how to configure and run RiboViz, let's look at its outputs. 
-
-### Analysis outputs
-
-The outputs from running the RiboViz workflow, the analysis outputs, are put in an output directory. This output directory is defined in the `dir_out` configuration parameter. For the "vignette", this is `vignette/output/`, so let's take a look:
-
-```console
-$ ls vignette/output
-$ ls vignette/output/
-read_counts.tsv  TPMs_collated.tsv  WT3AT  WTnone
-$ ls vignette/output/WTnone/
-3ntframe_bygene_filtered.tsv            pos_sp_rpf_norm_reads.pdf
-3ntframe_bygene.tsv                     pos_sp_rpf_norm_reads.tsv
-3ntframe_propbygene.pdf                 read_lengths.pdf
-3nt_periodicity.pdf                     read_lengths.tsv
-3nt_periodicity.tsv                     sequence_features.tsv
-codon_ribodens_gathered.tsv             startcodon_ribogridbar.pdf
-codon_ribodens.pdf                      startcodon_ribogrid.pdf
-codon_ribodens.tsv                      tpms.tsv
-features.pdf                            WTnone.bam
-gene_position_length_counts_5start.tsv  WTnone.bam.bai
-minus.bedgraph                          WTnone.h5
-plus.bedgraph                           WTnone_output_report.html
-pos_sp_nt_freq.tsv
-```
-
-There is one output files subdirectory for each sample plus data files holding data from the processing of all samples. These latter are `TPMs_collated.tsv` which holds the transcripts per million from each sample and `read_counts.tsv` which summarises the number of reads processed at each step in the workflow for each sample.
-
-Let's take a look at the outputs for a single sample:
-
-```console
-$ ls vignette/output/WTnone
-3ntframe_bygene_filtered.tsv            pos_sp_rpf_norm_reads.pdf
-3ntframe_bygene.tsv                     pos_sp_rpf_norm_reads.tsv
-3ntframe_propbygene.pdf                 read_lengths.pdf
-3nt_periodicity.pdf                     read_lengths.tsv
-3nt_periodicity.tsv                     sequence_features.tsv
-codon_ribodens_gathered.tsv             startcodon_ribogridbar.pdf
-codon_ribodens.pdf                      startcodon_ribogrid.pdf
-codon_ribodens.tsv                      tpms.tsv
-features.pdf                            WTnone.bam
-gene_position_length_counts_5start.tsv  WTnone.bam.bai
-minus.bedgraph                          WTnone.h5
-plus.bedgraph                           WTnone_output_report.html
-pos_sp_nt_freq.tsv
-```
-
-There are myriad files with data from the processing of the sample. These include a BAM file of reads mapped to transcripts, which can be directly used in genome browsers, alignments within an HDF5 file, tab-separated values files that can be used in your own custom analyses and complementary PDF files which contain graphs of this data.
-
-However, we'll look at the HTML file. `WTnone_output_report.html`. This is a new feature for RiboViz 2.1 by which the outputs from the analysis are summarised as a browsable HTML document.
-
-Let's open that document within a web browser and look at its contents.
-
-**Question: Does anyone have any questions about the outputs?**
-
-### Index and temporary files
-
-The RiboViz configuration also specifies directories for index and temporary files, in `dir_index` and `dir_tmp`. These contain files produced during intermediate steps within the workflow and which may or may not be of interest. Let's take a look:
-
-```console
-$ ls vignette/index/
-YAL_CDS_w_250.1.ht2  YAL_CDS_w_250.5.ht2  yeast_rRNA.1.ht2  yeast_rRNA.5.ht2
-YAL_CDS_w_250.2.ht2  YAL_CDS_w_250.6.ht2  yeast_rRNA.2.ht2  yeast_rRNA.6.ht2
-YAL_CDS_w_250.3.ht2  YAL_CDS_w_250.7.ht2  yeast_rRNA.3.ht2  yeast_rRNA.7.ht2
-YAL_CDS_w_250.4.ht2  YAL_CDS_w_250.8.ht2  yeast_rRNA.4.ht2  yeast_rRNA.8.ht2
-$ ls vignette/tmp/
-WT3AT  WTnone
-```
-
-There is one temporary files subdirectory for each sample.
-
-```
-$ ls vignette/tmp/WTnone/
-nonrRNA.fq             orf_map_clean.sam  trim_5p_mismatch.tsv
-orf_map_clean.bam      orf_map.sam        trim.fq
-orf_map_clean.bam.bai  rRNA_map.sam       unaligned.fq
-```
-
-These directories does not contain the files themselves, but, instead so-called symbolic links to these files which are actually located within a Nextflow-specific directory which I'll describe in a moment. However, these symbolic links makes it appear that these files themselves are in these directories, and they can be used as if they are, and avoids the need to have multiple copies of the files within your file system.
-
-The files in the workflow output directory, specified in the `dir_out` configuration parameter, are not symbolic links but are copies of the files created within Nextflow's `work/` directory  as you may want to keep these files for later use. If you want copies of, rather than symbolic links to, index and temporary files then there is a `publish_index_tmp` configuration parameter that allows you to request this.
-
-**Question: Does anyone have any questions about these index and temporary files?**
-
-### Nextflow files 
-
-Now, what is this Nextflow-specific directory I just mentioned? When Nextflow runs it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command to be invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
+Now, what is this Nextflow-specific directory I mentioned. When Nextflow runs it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command to be invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
 
 ```console
 $ ls work
