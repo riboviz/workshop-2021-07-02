@@ -279,6 +279,8 @@ orf_map_clean.bam.bai  rRNA_map.sam       unaligned.fq
 
 These directories does not contain the files themselves, but, instead so-called symbolic links to these files which are actually located within a Nextflow-specific directory which I'll describe in a moment. However, these symbolic links makes it appear that these files themselves are in these directories, and they can be used as if they are, and avoids the need to have multiple copies of the files within your file system.
 
+The files in the workflow output directory, specified in the `dir_out` configuration parameter, are not symbolic links but are copies of the files created within Nextflow's `work/` directory  as you may want to keep these files for later use. If you want copies of, rather than symbolic links to, index and temporary files then there is a `publish_index_tmp` configuration parameter that allows you to request this.
+
 **Question: Does anyone have any questions about these index and temporary files?**
 
 ### Nextflow files 
