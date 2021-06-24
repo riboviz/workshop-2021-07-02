@@ -354,7 +354,7 @@ $ nextflow log modest_shaw -f name -filter "status == 'FAILED'"
 
 As all our steps succeeded, no steps are returned. 
 
-**In your own time, explore `nextflow log`. For more information see Nextflow [Tracing & visualisation](https://www.nextflow.io/docs/latest/tracing.html), `nextflow log -h` and to see the log fields available run `nextlog log -l`.**
+**In your own time, explore `nextflow log`. For more information see Nextflow [Tracing & visualisation](https://www.nextflow.io/docs/latest/tracing.html), `nextflow log -h` and to see the log fields available run `nextflow log -l`.**
 
 ### Resuming a failed workflow
 
