@@ -335,7 +335,7 @@ $ nextflow log modest_shaw -f script,exit -filter "name == 'cutAdapters (WTnone)
         	0
 ```
 
-Here we have specified that we want `script` and `exit` fields from the log relating to the invocation of a process that had the name `cutAdapters (WTnone)`. We are shown command used to invoke the `cutadapt` tool with the parameters that were passed to it, and its exit code, which is 0 as `cutadapt` completed successfully.
+Here we have specified that we want `script` and `exit` fields from the log relating to the invocation of a process that had the name `cutAdapters (WTnone)`. We are shown the command used to invoke the `cutadapt` tool with the parameters that were passed to it, and its exit code, which is 0 as `cutadapt` completed successfully.
 
 We can also browse any output and error messages printed by `cutadapt` when it ran, by asking for the `stdout` and `stderr` fields from the log:
 
