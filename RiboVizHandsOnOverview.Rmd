@@ -6,6 +6,9 @@ output:
   ioslides_presentation
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
@@ -325,7 +328,7 @@ We can talk through what the nextflow log means, where the output goes, and what
 
 
 
-# Overview of how to adapt to your own dataset
+# How to adapt to your own dataset
 
 <div class="notes">
 focus on key considerations: 
@@ -337,7 +340,89 @@ refer to documentation for config.yaml
 explain example-datasets repository
 </div>
 
+## Key ingredients for a new dataset
 
+For each dataset
+
+- read structure / library prep
+- the raw data as fastq files
+
+For new organisms or strains:
+
+- transcript sequences and CDS maps
+- contaminant sequences
+
+Example Datasets is a place to start: 
+
+https://github.com/riboviz/example-datasets
+
+## Example Datasets Repository can help
+
+This example-datasets repository is for the configuration files and genome/annotation files needed to run the riboviz ribosome profiling pipeline on specific datasets. It aims to:
+
+- provide specific example datasets for new users to try or to adapt
+- share up-to-date tested example datasets between the riboviz development team
+
+https://github.com/riboviz/example-datasets
+
+## Example datasets are collected by organism
+
+<div class="centered">
+```{r, out.width = "800"}
+knitr::include_graphics("img/example_datasets_fungi_screenshot.png")
+``` 
+</div>
+
+https://github.com/riboviz/example-datasets
+
+## Read structure
+
+- Read the methods section
+- If you did the library prep, you know this
+- UMI-tools allows flexible descriptions of barcodes and UMIs
+  - `(?P<umi_1>.{8})` extracts an 8nt UMI from the 5' end of the read. 
+  - `^(?P<umi_1>.{4}).+(?P<umi_2>.{4})(?P<cell_1>.{3})$` extracts a 3nt barcode from the 3' end of a read then extracts a 4nt UMI from the 5' end and a 4nt UMI from the 3' end.
+
+## Transcript data needed for new organisms
+
+This is the most unpredictable part, sadly. Budget 1-2 weeks.
+
+**EITHER transcriptome:** use a published genome annotation with UTRs and splicing to create stranded transcript sequences in fasta format.
+
+*But*, these are available for few organisms, and usually have weird formatting problems.
+
+**OR padded ORFeome:** For each open reading frame of interest, the (spliced) ORF with fixed-with genomic sequence either side
+
+
+## Pick the annotation relevant to your biological question
+
+| transcriptome  | padded ORFeome  |
+|---|---|
+| more realistic  | easier to generate  |
+| all mRNAs  | ORF translation only |
+| UTRs, uORFs  | -  |
+
+## How to check the annotation
+
+Reality-check your fasta and gff match with `check_fasta_gff.py`:
+
+* start codons
+* stop codons
+* sense codons (no internal stops)
+
+This flags big problems, like reverse-strand reads or intron inclusion.
+
+You can still run riboviz on an annotation with errors: it is descriptive not prescriptive.
+
+## Contaminants
+
+- ribosomal rRNA
+- transfer RNA, snoRNA
+- other abundant non-coding RNAs
+
+Start with your favourite organism database or rRNA database.
+
+Ensembl, Silva rRNA database, FungiDB, VEUpathDB, Ensembl, BLAST, ...
 
 # Questions & Answer Session
 
