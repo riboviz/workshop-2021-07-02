@@ -6,9 +6,6 @@ output:
   ioslides_presentation
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
@@ -116,7 +113,7 @@ Next: move to hands-on
   - raw data through to useful figures
 * flexible and robust
   - over library prep strategies (multiplexed, UMIs)
-  - over organisms (bacteria, eukarya, archaea)
+  - over organisms (bacteria, yeast, human, ...)
   - easy to extend
 * transcript- or ORF-centric
   - splicing is a different problem
@@ -151,18 +148,18 @@ Some examples are: Snakemake, Toil, cwltool and **Nextflow**
 
 ## Why not just use a script? riboviz as a case study
 
-'riboviz' was previously controlled by a **python script** which ran other scripts (bash, python, R)
+'riboviz' was previously controlled by a **python script** which ran other scripts (bash, python, R).
 
 _More complex pipeline -> more admin-related development time!_ 
 
-Nextflow handles the admin-related tasks better (check **files exist**, create **log files**, queue & **run tasks efficiently**)
+Nextflow handles the admin-related tasks for us (check **files exist**, create **log files**, queue & **run tasks efficiently**)
 
 _Rather than having to create **bespoke code**, we can now use existing Nextflow features_
 
 <font size="2">Jackson, Kavoussanakis & Wallace. (2021). Using prototyping to choose a bioinformatics workflow management system: https://doi.org/10.1371/journal.pcbi.1008622</font>
 
 
-## what riboviz does well
+## What riboviz does well
 
 * it works
   - on many datasets from many species
@@ -174,7 +171,7 @@ _Rather than having to create **bespoke code**, we can now use existing Nextflow
 * can trim 5' untemplated mismatches added by Superscript enzymes
 * thoroughly documented
 
-## what riboviz does not (yet) do
+## What riboviz does not (yet) do (well)
 
 * overlapping ORFs
   - not tested on RNA viruses
@@ -182,8 +179,11 @@ _Rather than having to create **bespoke code**, we can now use existing Nextflow
 * multimapping reads
 * poor support for matched RNA-seq data
   - so export counts from riboviz for differential translation
+* new organisms/annotations are still painful.
 
-There are other tools; we are also interested in extending riboviz
+There are other tools.
+
+We are also interested in extending riboviz for **your** needs  
 
 ## riboviz Workflow: Inputs
 
@@ -275,13 +275,17 @@ knitr::include_graphics("https://raw.githubusercontent.com/riboviz/workflows/mai
 </div>
 
 
-## riboviz workflow in detail
+## riboviz workflow in detail, sample focus
 
 <div class="centered">
 ```{r, out.width = "300"}
 knitr::include_graphics("img/workflow_bysample.svg")
 ``` 
 </div>  
+
+<div class="notes">
+Move quickly to explain with bigger fonts.
+</div>
 
 ## riboviz workflow by sample
 
@@ -294,11 +298,13 @@ knitr::include_graphics("img/workflow_bysample.svg")
 * **bam_to_h5.R** count reads by 5' position and read length
 * **generate_stats_figs.R** 3nt periodicity and read counts by ORF
 
-There are options...
+There are options, e.g. multiplexing.
 
 # Hands-on session to run riboviz on a small dataset
 
 ## Run on vignette  
+
+Welcome to Dr. Mike Jackson (EPCC, Edinburgh), who will lead the hands-on portion.
 
 <div class="notes">
 This should show what it "looks like" for riboviz to run and take about 3 minutes.
@@ -308,16 +314,6 @@ We can flush out bugs or installation problems.
 We can talk through what the nextflow log means, where the output goes, and what the html output means, very briefly.
 </div>
 
-## Run on downsampled dataset  
-
-<div class="notes">
-Hands-on approach to:
- - download the data + config file
- - ensure that prep_riboviz.nf can find these inputs, using --validate-only
- - run on that data, ideally takes under 5 minutes on a laptop.
- - as the data are running, Q&A on dataset setup and nextflow
- - refer to documentation, especially troubleshooting
-</div>
 
 ## Finding and interpreting riboviz output  
 
