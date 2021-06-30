@@ -1,0 +1,1934 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="701pt"
+   height="1315pt"
+   viewBox="0 0 701 1315"
+   version="1.1"
+   id="svg1510"
+   sodipodi:docname="workflow_bysample.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+  <metadata
+     id="metadata1516">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1514" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1246"
+     inkscape:window-height="704"
+     id="namedview1512"
+     showgrid="false"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5"
+     inkscape:zoom="0.2251816"
+     inkscape:cx="1032"
+     inkscape:cy="863.33333"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="graph0" />
+  <g
+     id="graph0"
+     class="graph"
+     transform="translate(-2.5,1469.5)">
+    <title
+       id="title833">G</title>
+    <polygon
+       fill="#ffffff"
+       stroke="transparent"
+       points="1557,-1648 1557,4 -4,4 -4,-1648 "
+       id="polygon835" />
+    <g
+       id="clust1"
+       class="cluster">
+      <title
+         id="title837">cluster_data</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="1545,-1636 1545,-1472 735,-1472 735,-1636 "
+         id="polygon839" />
+      <text
+         text-anchor="middle"
+         x="753.55798"
+         y="-1623"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text841">Data</text>
+    </g>
+    <g
+       id="clust2"
+       class="cluster">
+      <title
+         id="title844">cluster_organism</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="1025,-1580 1025,-1508 837,-1508 837,-1580 "
+         id="polygon846" />
+      <text
+         text-anchor="middle"
+         x="877.784"
+         y="-1567"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text848">Organism data</text>
+    </g>
+    <g
+       id="clust3"
+       class="cluster">
+      <title
+         id="title851">cluster_contaminants</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="829,-1580 829,-1508 743,-1508 743,-1580 "
+         id="polygon853" />
+      <text
+         text-anchor="middle"
+         x="781.83948"
+         y="-1567"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text855">Contaminants</text>
+    </g>
+    <g
+       id="clust4"
+       class="cluster">
+      <title
+         id="title858">cluster_additional_organism</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="1537,-1608 1537,-1480 1347,-1480 1347,-1608 "
+         id="polygon860" />
+      <text
+         text-anchor="middle"
+         x="1428.3455"
+         y="-1595"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text862">Additional organism-specific data</text>
+    </g>
+    <g
+       id="clust5"
+       class="cluster">
+      <title
+         id="title865">cluster_ribosome</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="1339,-1580 1339,-1508 1033,-1508 1033,-1580 "
+         id="polygon867" />
+      <text
+         text-anchor="middle"
+         x="1093.509"
+         y="-1567"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text869">Ribosome profiling data</text>
+    </g>
+    <g
+       id="clust6"
+       class="cluster">
+      <title
+         id="title872">cluster_indexing</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="962,-1464 962,-1320 708,-1320 708,-1464 "
+         id="polygon874" />
+      <text
+         text-anchor="middle"
+         x="734.89648"
+         y="-1451"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text876">Indexing</text>
+    </g>
+    <g
+       id="clust7"
+       class="cluster">
+      <title
+         id="title879">cluster_per_sample_processing</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="698,-1464 698,-160 8,-160 8,-1464 "
+         id="polygon881" />
+      <text
+         text-anchor="middle"
+         x="69.347"
+         y="-1451"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text883">Process &lt;SAMPLE_ID&gt;</text>
+    </g>
+    <g
+       id="clust8"
+       class="cluster">
+      <title
+         id="title886">cluster_summary</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="890,-152 890,-8 610,-8 610,-152 "
+         id="polygon888" />
+      <text
+         text-anchor="middle"
+         x="639.38702"
+         y="-139"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text890">Summary</text>
+    </g>
+    <!-- input/CDS.fa -->
+    <g
+       id="node1"
+       class="node">
+      <title
+         id="title893">input/CDS.fa</title>
+      <text
+         text-anchor="middle"
+         x="881"
+         y="-1531"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text895">input/CDS.fa</text>
+    </g>
+    <!-- h2build2 -->
+    <g
+       id="node9"
+       class="node">
+      <title
+         id="title898">h2build2</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="862.3809,-1400 929.6191,-1400 929.6191,-1436 862.3809,-1436 "
+         id="polygon900" />
+      <text
+         text-anchor="middle"
+         x="896"
+         y="-1415"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text902">hisat2-build</text>
+    </g>
+    <!-- input/CDS.fa&#45;&gt;h2build2 -->
+    <g
+       id="edge3"
+       class="edge">
+      <title
+         id="title905">input/CDS.fa-&gt;h2build2</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 883.3438,-1515.875 c 2.4075,18.6184 6.189,47.8619 8.9922,69.54"
+         id="path907" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="888.8696,-1445.8491 895.8118,-1446.7469 893.6232,-1436.3805 "
+         id="polygon909" />
+    </g>
+    <!-- statsfigs -->
+    <g
+       id="node21"
+       class="node">
+      <title
+         id="title912">statsfigs</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="534.2477,-392 647.7523,-392 647.7523,-428 534.2477,-428 "
+         id="polygon914" />
+      <text
+         text-anchor="middle"
+         x="591"
+         y="-407"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text916">generate_stats_figs.R</text>
+    </g>
+    <!-- input/CDS.fa&#45;&gt;statsfigs -->
+    <g
+       id="edge30"
+       class="edge">
+      <title
+         id="title919">input/CDS.fa-&gt;statsfigs</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 889.422,-1515.8797 c 7.5564,14.1925 20.0076,33.2544 36.578,43.8797 15.2618,9.7862 27.4786,-5.1113 40,8 36.6398,38.366 18,64.9489 18,118 0,0 0,0 0,576 0,185.8506 -123.578,213.8948 -285,306 -19.3243,11.0262 -41.1885,22.1913 -60.165,31.4849"
+         id="path921" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="637.2391,-435.631 640.2989,-429.3351 629.7749,-428.1119 "
+         id="polygon923" />
+    </g>
+    <!-- input/CDS.gff3 -->
+    <g
+       id="node2"
+       class="node">
+      <title
+         id="title926">input/CDS.gff3</title>
+      <text
+         text-anchor="middle"
+         x="976"
+         y="-1531"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text928">input/CDS.gff3</text>
+    </g>
+    <!-- bam2h5 -->
+    <g
+       id="node20"
+       class="node">
+      <title
+         id="title931">bam2h5</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="552.981,-536 629.019,-536 629.019,-572 552.981,-572 "
+         id="polygon933" />
+      <text
+         text-anchor="middle"
+         x="591"
+         y="-551"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text935">bam_to_h5.R</text>
+    </g>
+    <!-- input/CDS.gff3&#45;&gt;bam2h5 -->
+    <g
+       id="edge27"
+       class="edge">
+      <title
+         id="title938">input/CDS.gff3-&gt;bam2h5</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 983.4931,-1515.9474 C 996.5277,-1482.8599 1022,-1410.0113 1022,-1346 c 0,0 0,0 0,576 0,169.6317 -270.1398,206.0549 -382.6849,213.8688"
+         id="path940" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="639.0015,-559.6184 639.4535,-552.633 629.2484,-555.4799 "
+         id="polygon942" />
+    </g>
+    <!-- input/CDS.gff3&#45;&gt;statsfigs -->
+    <g
+       id="edge31"
+       class="edge">
+      <title
+         id="title945">input/CDS.gff3-&gt;statsfigs</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 990.2495,-1515.9923 C 1014.215,-1483.8372 1060,-1413.5651 1060,-1346 c 0,0 0,0 0,792 0,83.033 -272.0372,123.1152 -401.7438,137.5072"
+         id="path947" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="657.6018,-419.9423 658.36,-412.9835 648.0397,-415.3798 "
+         id="polygon949" />
+    </g>
+    <!-- input/rRNA.fa -->
+    <g
+       id="node3"
+       class="node">
+      <title
+         id="title952">input/rRNA.fa</title>
+      <text
+         text-anchor="middle"
+         x="786"
+         y="-1531.3"
+         font-family="Helvetica, sans-Serif"
+         font-size="9px"
+         fill="#000000"
+         id="text954">input/rRNA.fa</text>
+    </g>
+    <!-- h2build1 -->
+    <g
+       id="node8"
+       class="node">
+      <title
+         id="title957">h2build1</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="745.3809,-1400 812.6191,-1400 812.6191,-1436 745.3809,-1436 "
+         id="polygon959" />
+      <text
+         text-anchor="middle"
+         x="779"
+         y="-1415"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text961">hisat2-build</text>
+    </g>
+    <!-- input/rRNA.fa&#45;&gt;h2build1 -->
+    <g
+       id="edge1"
+       class="edge">
+      <title
+         id="title964">input/rRNA.fa-&gt;h2build1</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 784.9063,-1515.875 c -1.1185,18.5338 -2.8722,47.5963 -4.1786,69.2439"
+         id="path966" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="777.218,-1446.5732 784.2053,-1446.1515 780.1092,-1436.3805 "
+         id="polygon968" />
+    </g>
+    <!-- data -->
+    <g
+       id="node4"
+       class="node">
+      <title
+         id="title971">data</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="1355.1609,-1488 1528.8391,-1488 1528.8391,-1580 1355.1609,-1580 "
+         id="polygon973" />
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1567"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text975">data/codon_pos_i200.RData</text>
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1555"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text977" />
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1543"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text979">data/features.tsv</text>
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1531"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text981" />
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1519"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text983">data/tRNAs.tsv</text>
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1507"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text985" />
+      <text
+         text-anchor="middle"
+         x="1442"
+         y="-1495"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text987">data/standard_asite_disp_length.txt</text>
+    </g>
+    <!-- data&#45;&gt;statsfigs -->
+    <g
+       id="edge32"
+       class="edge">
+      <title
+         id="title990">data-&gt;statsfigs</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1378.3837,-1487.9612 C 1312.7831,-1439.3475 1220,-1366.8965 1220,-1346 c 0,0 0,0 0,720 0,126.4911 -116.1012,116.1757 -234,162 -58.3543,22.6809 -231.4914,40.2727 -328.0422,48.6415"
+         id="path992" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="657.3824,-418.8221 657.9804,-411.8476 647.7179,-414.4806 "
+         id="polygon994" />
+    </g>
+    <!-- ribosome_data0toI -->
+    <g
+       id="node5"
+       class="node">
+      <title
+         id="title997">ribosome_data0toI</title>
+      <text
+         text-anchor="middle"
+         x="1304"
+         y="-1531"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text999">...</text>
+    </g>
+    <!-- input/&lt;SAMPLE_ID&gt;.fastq.gz -->
+    <g
+       id="node6"
+       class="node">
+      <title
+         id="title1002">input/&lt;SAMPLE_ID&gt;.fastq.gz</title>
+      <text
+         text-anchor="middle"
+         x="1186"
+         y="-1531"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1004">input/&lt;SAMPLE_ID&gt;.fastq.gz</text>
+    </g>
+    <!-- cut -->
+    <g
+       id="node12"
+       class="node">
+      <title
+         id="title1007">cut</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="615.6458,-1400 670.3542,-1400 670.3542,-1436 615.6458,-1436 "
+         id="polygon1009" />
+      <text
+         text-anchor="middle"
+         x="643"
+         y="-1415"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1011">cutadapt</text>
+    </g>
+    <!-- input/&lt;SAMPLE_ID&gt;.fastq.gz&#45;&gt;cut -->
+    <g
+       id="edge5"
+       class="edge">
+      <title
+         id="title1014">input/&lt;SAMPLE_ID&gt;.fastq.gz-&gt;cut</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1168.7826,-1515.7204 c -15.366,14.9088 -39.3197,34.8935 -64.7826,43.7204 -42.0012,14.5601 -357.9895,-6.5333 -400,8 -12.9571,4.4825 -25.3959,12.8448 -35.6224,21.2229"
+         id="path1016" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="665.9612,-1445.3147 670.5378,-1440.018 660.6828,-1436.1284 "
+         id="polygon1018" />
+    </g>
+    <!-- count_reads -->
+    <g
+       id="node38"
+       class="node">
+      <title
+         id="title1021">count_reads</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="789.6402,-88 874.3598,-88 874.3598,-124 789.6402,-124 "
+         id="polygon1023" />
+      <text
+         text-anchor="middle"
+         x="832"
+         y="-103"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1025">count_reads.py</text>
+    </g>
+    <!-- input/&lt;SAMPLE_ID&gt;.fastq.gz&#45;&gt;count_reads -->
+    <g
+       id="edge38"
+       class="edge">
+      <title
+         id="title1028">input/&lt;SAMPLE_ID&gt;.fastq.gz-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 1185.3573,-1515.8542 c -1.1307,33.5386 -3.3573,107.4998 -3.3573,169.8542 0,0 0,0 0,936 0,156.0133 -200.6723,250.0588 -298.1194,286.5302"
+         id="path1030" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="882.3951,-126.6528 884.8117,-120.0831 874.2182,-119.9157 "
+         id="polygon1032" />
+    </g>
+    <!-- ribosome_dataItoN -->
+    <g
+       id="node7"
+       class="node">
+      <title
+         id="title1035">ribosome_dataItoN</title>
+      <text
+         text-anchor="middle"
+         x="1068"
+         y="-1531"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1037">...</text>
+    </g>
+    <!-- index/rRNA.1|...|8.ht2 -->
+    <g
+       id="node10"
+       class="node">
+      <title
+         id="title1040">index/rRNA.1|...|8.ht2</title>
+      <text
+         text-anchor="middle"
+         x="772"
+         y="-1343"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1042">index/rRNA.1|...|8.ht2</text>
+    </g>
+    <!-- h2build1&#45;&gt;index/rRNA.1|...|8.ht2 -->
+    <g
+       id="edge2"
+       class="edge">
+      <title
+         id="title1045">h2build1-&gt;index/rRNA.1|...|8.ht2</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 777.2336,-1399.8314 c -0.7486,7.7004 -1.6389,16.8571 -2.4709,25.4148"
+         id="path1047" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="771.2744,-1374.7051 778.2415,-1374.0276 773.7902,-1364.4133 "
+         id="polygon1049" />
+    </g>
+    <!-- index/CDS.1|...|8.ht2 -->
+    <g
+       id="node11"
+       class="node">
+      <title
+         id="title1052">index/CDS.1|...|8.ht2</title>
+      <text
+         text-anchor="middle"
+         x="900"
+         y="-1343"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1054">index/CDS.1|...|8.ht2</text>
+    </g>
+    <!-- h2build2&#45;&gt;index/CDS.1|...|8.ht2 -->
+    <g
+       id="edge4"
+       class="edge">
+      <title
+         id="title1057">h2build2-&gt;index/CDS.1|...|8.ht2</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 897.0094,-1399.8314 c 0.4278,7.7004 0.9365,16.8571 1.4119,25.4148"
+         id="path1059" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="894.9276,-1374.2037 901.9169,-1374.592 898.977,-1364.4133 "
+         id="polygon1061" />
+    </g>
+    <!-- h21 -->
+    <g
+       id="node13"
+       class="node">
+      <title
+         id="title1064">h21</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="585,-1256 639,-1256 639,-1292 585,-1292 "
+         id="polygon1066" />
+      <text
+         text-anchor="middle"
+         x="612"
+         y="-1271"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1068">hisat2</text>
+    </g>
+    <!-- index/rRNA.1|...|8.ht2&#45;&gt;h21 -->
+    <g
+       id="edge8"
+       class="edge">
+      <title
+         id="title1071">index/rRNA.1|...|8.ht2-&gt;h21</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 731.6252,-1327.8314 c -25.4987,11.4745 -58.1828,26.1823 -82.9419,37.3239"
+         id="path1073" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="646.9607,-1293.5704 649.8333,-1287.187 639.2778,-1286.275 "
+         id="polygon1075" />
+    </g>
+    <!-- h22 -->
+    <g
+       id="node14"
+       class="node">
+      <title
+         id="title1078">h22</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="493,-1112 547,-1112 547,-1148 493,-1148 "
+         id="polygon1080" />
+      <text
+         text-anchor="middle"
+         x="520"
+         y="-1127"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1082">hisat2</text>
+    </g>
+    <!-- index/CDS.1|...|8.ht2&#45;&gt;h22 -->
+    <g
+       id="edge11"
+       class="edge">
+      <title
+         id="title1085">index/CDS.1|...|8.ht2-&gt;h22</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 882.606,-1327.9608 C 849.7223,-1294.8403 774.9028,-1224.0656 699,-1184 c -46.0495,24.3074 -104.6744,39.3553 -142.0322,47.2035"
+         id="path1087" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="556.1239,-1140.1965 557.5202,-1133.3372 547.023,-1134.7721 "
+         id="polygon1089" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/trim.fq -->
+    <g
+       id="node22"
+       class="node">
+      <title
+         id="title1092">tmp/&lt;SAMPLE_ID&gt;/trim.fq</title>
+      <text
+         text-anchor="middle"
+         x="623"
+         y="-1343"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1094">tmp/&lt;SAMPLE_ID&gt;/trim.fq</text>
+    </g>
+    <!-- cut&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/trim.fq -->
+    <g
+       id="edge6"
+       class="edge">
+      <title
+         id="title1097">cut-&gt;tmp/&lt;SAMPLE_ID&gt;/trim.fq</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 637.9532,-1399.8314 c -2.1626,7.7851 -4.7385,17.0585 -7.138,25.6967"
+         id="path1099" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="627.419,-1374.9852 634.1636,-1373.1117 628.1148,-1364.4133 "
+         id="polygon1101" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam -->
+    <g
+       id="node23"
+       class="node">
+      <title
+         id="title1104">tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam</title>
+      <text
+         text-anchor="middle"
+         x="601"
+         y="-1199"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1106">tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam</text>
+    </g>
+    <!-- h21&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam -->
+    <g
+       id="edge9"
+       class="edge">
+      <title
+         id="title1109">h21-&gt;tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 609.2242,-1255.8314 c -1.1764,7.7004 -2.5753,16.8571 -3.8828,25.4148"
+         id="path1111" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="601.8636,-1230.8272 608.7833,-1229.7699 603.8131,-1220.4133 "
+         id="polygon1113" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq -->
+    <g
+       id="node24"
+       class="node">
+      <title
+         id="title1116">tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq</title>
+      <text
+         text-anchor="middle"
+         x="415"
+         y="-1199"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1118">tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq</text>
+    </g>
+    <!-- h21&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq -->
+    <g
+       id="edge10"
+       class="edge">
+      <title
+         id="title1121">h21-&gt;tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 584.608,-1263.9887 c -28.4358,10.3928 -73.8013,26.973 -110.4621,40.3719"
+         id="path1123" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="472.7354,-1226.8278 475.1383,-1220.2531 464.5445,-1220.1076 "
+         id="polygon1125" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/unaligned.fq -->
+    <g
+       id="node25"
+       class="node">
+      <title
+         id="title1128">tmp/&lt;SAMPLE_ID&gt;/unaligned.fq</title>
+      <text
+         text-anchor="middle"
+         x="610"
+         y="-1055"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1130">tmp/&lt;SAMPLE_ID&gt;/unaligned.fq</text>
+    </g>
+    <!-- h22&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/unaligned.fq -->
+    <g
+       id="edge13"
+       class="edge">
+      <title
+         id="title1133">h22-&gt;tmp/&lt;SAMPLE_ID&gt;/unaligned.fq</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 542.7108,-1111.8314 c 11.0852,8.8682 24.5846,19.6677 36.5744,29.2596"
+         id="path1135" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="577.3013,-1079.6768 581.6742,-1085.1429 587.2965,-1076.1628 "
+         id="polygon1137" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/orf_map.sam -->
+    <g
+       id="node26"
+       class="node">
+      <title
+         id="title1140">tmp/&lt;SAMPLE_ID&gt;/orf_map.sam</title>
+      <text
+         text-anchor="middle"
+         x="430"
+         y="-1055"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1142">tmp/&lt;SAMPLE_ID&gt;/orf_map.sam</text>
+    </g>
+    <!-- h22&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/orf_map.sam -->
+    <g
+       id="edge14"
+       class="edge">
+      <title
+         id="title1145">h22-&gt;tmp/&lt;SAMPLE_ID&gt;/orf_map.sam</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 497.2892,-1111.8314 c -11.0852,8.8682 -24.5846,19.6677 -36.5744,29.2596"
+         id="path1147" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="458.3258,-1085.1429 462.6987,-1079.6768 452.7035,-1076.1628 "
+         id="polygon1149" />
+    </g>
+    <!-- samindex -->
+    <g
+       id="node15"
+       class="node">
+      <title
+         id="title1152">samindex</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="330.8204,-680 413.1796,-680 413.1796,-716 330.8204,-716 "
+         id="polygon1154" />
+      <text
+         text-anchor="middle"
+         x="372"
+         y="-695"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1156">samtools index</text>
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai -->
+    <g
+       id="node30"
+       class="node">
+      <title
+         id="title1159">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai</title>
+      <text
+         text-anchor="middle"
+         x="372"
+         y="-623"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1161">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai</text>
+    </g>
+    <!-- samindex&#45;&gt;output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai -->
+    <g
+       id="edge21"
+       class="edge">
+      <title
+         id="title1164">samindex-&gt;output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 372,-679.8314 c 0,7.7004 0,16.8571 0,25.4148"
+         id="path1166" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="368.5001,-654.4133 375.5001,-654.4132 372,-644.4133 "
+         id="polygon1168" />
+    </g>
+    <!-- samview -->
+    <g
+       id="node16"
+       class="node">
+      <title
+         id="title1171">samview</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="298.6125,-824 445.3875,-824 445.3875,-860 298.6125,-860 "
+         id="polygon1173" />
+      <text
+         text-anchor="middle"
+         x="372"
+         y="-839"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1175">samtools view | samtools sort</text>
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam -->
+    <g
+       id="node29"
+       class="node">
+      <title
+         id="title1178">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam</title>
+      <text
+         text-anchor="middle"
+         x="372"
+         y="-767"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1180">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam</text>
+    </g>
+    <!-- samview&#45;&gt;output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam -->
+    <g
+       id="edge19"
+       class="edge">
+      <title
+         id="title1183">samview-&gt;output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 372,-823.8314 c 0,7.7004 0,16.8571 0,25.4148"
+         id="path1185" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="368.5001,-798.4133 375.5001,-798.4132 372,-788.4133 "
+         id="polygon1187" />
+    </g>
+    <!-- trim -->
+    <g
+       id="node17"
+       class="node">
+      <title
+         id="title1190">trim</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="374.496,-968 485.504,-968 485.504,-1004 374.496,-1004 "
+         id="polygon1192" />
+      <text
+         text-anchor="middle"
+         x="430"
+         y="-983"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1194">trim_5p_mismatch.py</text>
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv -->
+    <g
+       id="node27"
+       class="node">
+      <title
+         id="title1197">tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv</title>
+      <text
+         text-anchor="middle"
+         x="588"
+         y="-911"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1199">tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv</text>
+    </g>
+    <!-- trim&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv -->
+    <g
+       id="edge17"
+       class="edge">
+      <title
+         id="title1202">trim-&gt;tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 469.8701,-967.8314 c 21.0376,9.5868 47.0282,21.4306 69.2695,31.5659"
+         id="path1204" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="537.8655,-932.9999 540.7683,-939.3697 548.4166,-932.038 "
+         id="polygon1206" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam -->
+    <g
+       id="node28"
+       class="node">
+      <title
+         id="title1209">tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam</title>
+      <text
+         text-anchor="middle"
+         x="371"
+         y="-911"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1211">tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam</text>
+    </g>
+    <!-- trim&#45;&gt;tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam -->
+    <g
+       id="edge16"
+       class="edge">
+      <title
+         id="title1214">trim-&gt;tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 415.1118,-967.8314 c -6.8648,8.3774 -15.1419,18.4783 -22.6629,27.6565"
+         id="path1216" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="389.7197,-942.3665 395.1341,-937.9297 386.0886,-932.4133 "
+         id="polygon1218" />
+    </g>
+    <!-- bedplus -->
+    <g
+       id="node18"
+       class="node">
+      <title
+         id="title1221">bedplus</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="141.4681,-536 264.5319,-536 264.5319,-572 141.4681,-572 "
+         id="polygon1223" />
+      <text
+         text-anchor="middle"
+         x="203"
+         y="-551"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1225">bedtools genomecov (+)</text>
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/plus.bedgraph -->
+    <g
+       id="node31"
+       class="node">
+      <title
+         id="title1228">output/&lt;SAMPLE_ID&gt;/plus.bedgraph</title>
+      <text
+         text-anchor="middle"
+         x="174"
+         y="-479"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1230">output/&lt;SAMPLE_ID&gt;/plus.bedgraph</text>
+    </g>
+    <!-- bedplus&#45;&gt;output/&lt;SAMPLE_ID&gt;/plus.bedgraph -->
+    <g
+       id="edge23"
+       class="edge">
+      <title
+         id="title1233">bedplus-&gt;output/&lt;SAMPLE_ID&gt;/plus.bedgraph</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 195.6821,-535.8314 c -3.1697,7.8697 -6.9521,17.2602 -10.4634,25.9781"
+         id="path1235" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="181.9061,-510.9968 188.3992,-508.3815 181.4165,-500.4133 "
+         id="polygon1237" />
+    </g>
+    <!-- bedminus -->
+    <g
+       id="node19"
+       class="node">
+      <title
+         id="title1240">bedminus</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="312.479,-536 433.521,-536 433.521,-572 312.479,-572 "
+         id="polygon1242" />
+      <text
+         text-anchor="middle"
+         x="373"
+         y="-551"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1244">bedtools genomecov (-)</text>
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/minus.bedgraph -->
+    <g
+       id="node32"
+       class="node">
+      <title
+         id="title1247">output/&lt;SAMPLE_ID&gt;/minus.bedgraph</title>
+      <text
+         text-anchor="middle"
+         x="377"
+         y="-479"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1249">output/&lt;SAMPLE_ID&gt;/minus.bedgraph</text>
+    </g>
+    <!-- bedminus&#45;&gt;output/&lt;SAMPLE_ID&gt;/minus.bedgraph -->
+    <g
+       id="edge25"
+       class="edge">
+      <title
+         id="title1252">bedminus-&gt;output/&lt;SAMPLE_ID&gt;/minus.bedgraph</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 374.0094,-535.8314 c 0.4278,7.7004 0.9365,16.8571 1.4119,25.4148"
+         id="path1254" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="371.9276,-510.2037 378.9169,-510.592 375.977,-500.4133 "
+         id="polygon1256" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5 -->
+    <g
+       id="node33"
+       class="node">
+      <title
+         id="title1259">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5</title>
+      <text
+         text-anchor="middle"
+         x="591"
+         y="-479"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1261">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5</text>
+    </g>
+    <!-- bam2h5&#45;&gt;output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5 -->
+    <g
+       id="edge28"
+       class="edge">
+      <title
+         id="title1264">bam2h5-&gt;output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 591,-535.8314 c 0,7.7004 0,16.8571 0,25.4148"
+         id="path1266" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="587.5001,-510.4133 594.5001,-510.4132 591,-500.4133 "
+         id="polygon1268" />
+    </g>
+    <!-- pdfs -->
+    <g
+       id="node34"
+       class="node">
+      <title
+         id="title1271">pdfs</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="187.8109,-168 430.1891,-168 430.1891,-356 187.8109,-356 "
+         id="polygon1273" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-343"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1275">output/&lt;SAMPLE_ID&gt;/3nt_periodicity.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-331"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1277" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-319"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1279">output/&lt;SAMPLE_ID&gt;/codon_ribodens.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-307"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1281" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-295"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1283">output/&lt;SAMPLE_ID&gt;/read_lengths.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-283"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1285" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-271"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1287">output/&lt;SAMPLE_ID&gt;/pos_sp_rpf_norm_reads.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-259"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1289" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-247"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1291">output/&lt;SAMPLE_ID&gt;/features.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-235"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1293" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-223"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1295">output/&lt;SAMPLE_ID&gt;/startcodon_ribogridbar.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-211"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1297" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-199"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1299">output/&lt;SAMPLE_ID&gt;/startcodon_ribogrid.pdf</text>
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-187"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1301" />
+      <text
+         text-anchor="middle"
+         x="309"
+         y="-175"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1303">output/&lt;SAMPLE_ID&gt;/3ntframe_propbygene.pdf</text>
+    </g>
+    <!-- statsfigs&#45;&gt;pdfs -->
+    <g
+       id="edge33"
+       class="edge">
+      <title
+         id="title1306">statsfigs-&gt;pdfs</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 534.1604,-394.0491 C 504.8906,-384.7913 469.1223,-371.824 439,-356 c -0.0925,0.0486 -0.1849,0.0972 -0.2774,0.1459"
+         id="path1308" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="437.2158,-359.0189 440.5626,-352.8708 430.1062,-351.1637 "
+         id="polygon1310" />
+    </g>
+    <!-- tsvs -->
+    <g
+       id="node35"
+       class="node">
+      <title
+         id="title1313">tsvs</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         stroke-dasharray="5, 2"
+         points="448.429,-192 689.571,-192 689.571,-332 448.429,-332 "
+         id="polygon1315" />
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-319"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1317">output/&lt;SAMPLE_ID&gt;/3nt_periodicity.tsv</text>
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-307"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1319" />
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-295"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1321">output/&lt;SAMPLE_ID&gt;/codon_ribodens.tsv</text>
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-283"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1323" />
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-271"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1325">output/&lt;SAMPLE_ID&gt;/read_lengths.tsv</text>
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-259"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1327" />
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-247"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1329">output/&lt;SAMPLE_ID&gt;/pos_sp_rpf_norm_reads.tsv</text>
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-235"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1331" />
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-223"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1333">output/&lt;SAMPLE_ID&gt;/pos_sp_nt_freq.tsv</text>
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-211"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1335" />
+      <text
+         text-anchor="middle"
+         x="569"
+         y="-199"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1337">output/&lt;SAMPLE_ID&gt;/3ntframe_bygene.tsv</text>
+    </g>
+    <!-- statsfigs&#45;&gt;tsvs -->
+    <g
+       id="edge34"
+       class="edge">
+      <title
+         id="title1340">statsfigs-&gt;tsvs</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 588.3024,-391.8523 c -1.9063,12.8241 -4.6079,30.9984 -7.3879,49.7004"
+         id="path1342" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="577.4206,-342.4511 584.3445,-341.4218 579.4121,-332.0451 "
+         id="polygon1344" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/tpms.tsv -->
+    <g
+       id="node36"
+       class="node">
+      <title
+         id="title1347">output/&lt;SAMPLE_ID&gt;/tpms.tsv</title>
+      <text
+         text-anchor="middle"
+         x="93"
+         y="-259"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1349">output/&lt;SAMPLE_ID&gt;/tpms.tsv</text>
+    </g>
+    <!-- statsfigs&#45;&gt;output/&lt;SAMPLE_ID&gt;/tpms.tsv -->
+    <g
+       id="edge35"
+       class="edge">
+      <title
+         id="title1352">statsfigs-&gt;output/&lt;SAMPLE_ID&gt;/tpms.tsv</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 534.3132,-407.352 C 436.2512,-401.9896 239.6259,-387.5678 179,-356 c -29.6579,15.4428 -54.2778,45.4258 -69.4678,67.3915"
+         id="path1354" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="106.4544,-290.3024 112.2722,-286.4097 103.8022,-280.0449 "
+         id="polygon1356" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/trim.fq&#45;&gt;h21 -->
+    <g
+       id="edge7"
+       class="edge">
+      <title
+         id="title1359">tmp/&lt;SAMPLE_ID&gt;/trim.fq-&gt;h21</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 620.2242,-1327.8314 c -1.1764,7.7004 -2.5753,16.8571 -3.8828,25.4148"
+         id="path1361" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="612.8636,-1302.8272 619.7833,-1301.7699 614.8131,-1292.4133 "
+         id="polygon1363" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/trim.fq&#45;&gt;count_reads -->
+    <g
+       id="edge39"
+       class="edge">
+      <title
+         id="title1366">tmp/&lt;SAMPLE_ID&gt;/trim.fq-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 665.5588,-1327.8998 C 753.2672,-1289.2404 946,-1196.7008 946,-1130 c 0,0 0,0 0,432 0,239.5881 85.0632,330.0903 -34,538 -7.1029,12.4032 -18.3539,22.536 -30.2002,30.5345"
+         id="path1368" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="879.7283,-132.2977 883.4499,-126.3689 873.1195,-124.0167 "
+         id="polygon1370" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam&#45;&gt;count_reads -->
+    <g
+       id="edge40"
+       class="edge">
+      <title
+         id="title1373">tmp/&lt;SAMPLE_ID&gt;/rRNA_map.sam-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 689.7466,-1195.2896 c 72.1832,7.2601 166.4685,21.4379 194.2534,47.2896 30.3081,28.1993 24,48.6022 24,90 0,0 0,0 0,648 0,111.6219 22.6455,148.5916 -24,250 -4.872,10.5919 -12.7013,20.383 -20.8218,28.6369"
+         id="path1375" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="860.5301,-133.6738 865.3645,-128.6114 855.7152,-124.2363 "
+         id="polygon1377" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq&#45;&gt;h22 -->
+    <g
+       id="edge12"
+       class="edge">
+      <title
+         id="title1380">tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq-&gt;h22</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 441.4959,-1183.8314 c 13.1815,9.0387 29.2888,20.0838 43.4752,29.8116"
+         id="path1382" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="483.2859,-1150.9316 487.2446,-1156.7047 493.5125,-1148.1628 "
+         id="polygon1384" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq&#45;&gt;count_reads -->
+    <g
+       id="edge41"
+       class="edge">
+      <title
+         id="title1387">tmp/&lt;SAMPLE_ID&gt;/nonrRNA.fq-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 494.255,-1185.1599 C 624.6155,-1156.3479 870,-1096.9417 870,-1058 c 0,0 0,0 0,648 0,111.6219 -4.5997,140.0769 -24,250 -1.4913,8.4497 -3.6271,17.5183 -5.7827,25.7654"
+         id="path1389" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="836.7723,-134.9041 843.5266,-133.0658 837.5233,-124.3359 "
+         id="polygon1391" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/unaligned.fq&#45;&gt;count_reads -->
+    <g
+       id="edge42"
+       class="edge">
+      <title
+         id="title1394">tmp/&lt;SAMPLE_ID&gt;/unaligned.fq-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 690.3118,-1044.4838 c 47.1956,9.5018 100.8242,23.5242 117.6882,40.4838 29.1899,29.3552 24,48.6022 24,90 0,0 0,0 0,504 0,101.4679 0,221.9862 0,275.714"
+         id="path1396" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="828.5001,-134.1606 835.5001,-134.1605 832,-124.1605 "
+         id="polygon1398" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/orf_map.sam&#45;&gt;trim -->
+    <g
+       id="edge15"
+       class="edge">
+      <title
+         id="title1401">tmp/&lt;SAMPLE_ID&gt;/orf_map.sam-&gt;trim</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 430,-1039.8314 c 0,7.7004 0,16.8571 0,25.4148"
+         id="path1403" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="426.5001,-1014.4133 433.5001,-1014.4132 430,-1004.4133 "
+         id="polygon1405" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/orf_map.sam&#45;&gt;count_reads -->
+    <g
+       id="edge43"
+       class="edge">
+      <title
+         id="title1408">tmp/&lt;SAMPLE_ID&gt;/orf_map.sam-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 492.5738,-1039.9251 C 596.6468,-1008.9625 794,-946.0261 794,-914 c 0,0 0,0 0,504 0,102.2575 21.4318,222.3794 32.105,275.8609"
+         id="path1410" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="822.7307,-133.1676 829.5912,-134.558 828.1472,-124.062 "
+         id="polygon1412" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv&#45;&gt;count_reads -->
+    <g
+       id="edge44"
+       class="edge">
+      <title
+         id="title1415">tmp/&lt;SAMPLE_ID&gt;/trim_5p_mismatch.tsv-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 675.6401,-895.9884 c 20.8627,7.9814 41.3878,19.4693 56.3599,35.9884 27.8012,30.6737 24,48.6022 24,90 0,0 0,0 0,360 0,111.6219 -22.6455,148.5916 24,250 4.872,10.5919 12.7013,20.383 20.8218,28.6369"
+         id="path1417" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="798.6355,-128.6114 803.4699,-133.6738 808.2848,-124.2363 "
+         id="polygon1419" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam&#45;&gt;samview -->
+    <g
+       id="edge18"
+       class="edge">
+      <title
+         id="title1422">tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam-&gt;samview</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 371.2523,-895.8314 c 0.107,7.7004 0.2342,16.8571 0.353,25.4148"
+         id="path1424" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="368.1056,-870.3637 375.1049,-870.4609 371.7443,-860.4133 "
+         id="polygon1426" />
+    </g>
+    <!-- tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam&#45;&gt;count_reads -->
+    <g
+       id="edge45"
+       class="edge">
+      <title
+         id="title1429">tmp/&lt;SAMPLE_ID&gt;/orf_map_clean.sam-&gt;count_reads</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 457.6676,-895.9891 C 560.4466,-872.0807 718,-826.2561 718,-770 c 0,0 0,0 0,360 0,111.8058 -31.4676,155.3208 28,250 8.3844,13.3489 21.4032,23.9605 34.7962,32.1185"
+         id="path1431" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="779.1837,-124.7722 782.6443,-130.8569 789.6065,-122.8707 "
+         id="polygon1433" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam&#45;&gt;samindex -->
+    <g
+       id="edge20"
+       class="edge">
+      <title
+         id="title1436">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam-&gt;samindex</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 372,-751.8314 c 0,7.7004 0,16.8571 0,25.4148"
+         id="path1438" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="368.5001,-726.4133 375.5001,-726.4132 372,-716.4133 "
+         id="polygon1440" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai&#45;&gt;bedplus -->
+    <g
+       id="edge22"
+       class="edge">
+      <title
+         id="title1443">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai-&gt;bedplus</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 329.3542,-607.8314 c -22.7032,9.6724 -50.7993,21.6423 -74.7284,31.837"
+         id="path1445" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="253.1672,-579.1775 255.9109,-572.7376 245.3392,-572.038 "
+         id="polygon1447" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai&#45;&gt;bedminus -->
+    <g
+       id="edge24"
+       class="edge">
+      <title
+         id="title1450">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai-&gt;bedminus</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 372.2523,-607.8314 c 0.107,7.7004 0.2342,16.8571 0.353,25.4148"
+         id="path1452" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="369.1056,-582.3637 376.1049,-582.4609 372.7443,-572.4133 "
+         id="polygon1454" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai&#45;&gt;bam2h5 -->
+    <g
+       id="edge26"
+       class="edge">
+      <title
+         id="title1457">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.bam+.bai-&gt;bam2h5</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 426.9803,-607.9243 c 35.7491,11.7531 81.907,26.9283 116.1455,38.1848"
+         id="path1459" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="542.3022,-566.326 544.4885,-572.9758 552.8951,-566.5276 "
+         id="polygon1461" />
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5&#45;&gt;statsfigs -->
+    <g
+       id="edge29"
+       class="edge">
+      <title
+         id="title1464">output/&lt;SAMPLE_ID&gt;/&lt;SAMPLE_ID&gt;.h5-&gt;statsfigs</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 591,-463.8314 c 0,7.7004 0,16.8571 0,25.4148"
+         id="path1466" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="587.5001,-438.4133 594.5001,-438.4132 591,-428.4133 "
+         id="polygon1468" />
+    </g>
+    <!-- collate -->
+    <g
+       id="node37"
+       class="node">
+      <title
+         id="title1471">collate</title>
+      <polygon
+         fill="none"
+         stroke="#000000"
+         points="628.8819,-88 711.1181,-88 711.1181,-124 628.8819,-124 "
+         id="polygon1473" />
+      <text
+         text-anchor="middle"
+         x="670"
+         y="-103"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1475">collate_tpms.R</text>
+    </g>
+    <!-- output/&lt;SAMPLE_ID&gt;/tpms.tsv&#45;&gt;collate -->
+    <g
+       id="edge36"
+       class="edge">
+      <title
+         id="title1478">output/&lt;SAMPLE_ID&gt;/tpms.tsv-&gt;collate</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 102.4079,-243.9627 c 13.4619,23.7626 40.6212,64.78 76.5921,83.9627 75.2291,40.1185 329.8011,50.4931 439.7405,53.126"
+         id="path1480" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="618.8404,-103.3709 618.9996,-110.3691 628.9174,-106.6426 "
+         id="polygon1482" />
+    </g>
+    <!-- output/TPMs_collated.tsv -->
+    <g
+       id="node39"
+       class="node">
+      <title
+         id="title1485">output/TPMs_collated.tsv</title>
+      <text
+         text-anchor="middle"
+         x="682"
+         y="-31"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1487">output/TPMs_collated.tsv</text>
+    </g>
+    <!-- collate&#45;&gt;output/TPMs_collated.tsv -->
+    <g
+       id="edge37"
+       class="edge">
+      <title
+         id="title1490">collate-&gt;output/TPMs_collated.tsv</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 673.0281,-87.8314 c 1.2834,7.7004 2.8095,16.8571 4.2358,25.4148"
+         id="path1492" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="673.8347,-61.7018 680.7394,-62.8526 678.9311,-52.4133 "
+         id="polygon1494" />
+    </g>
+    <!-- output/read_counts.tsv -->
+    <g
+       id="node40"
+       class="node">
+      <title
+         id="title1497">output/read_counts.tsv</title>
+      <text
+         text-anchor="middle"
+         x="823"
+         y="-31"
+         font-family="Helvetica, sans-Serif"
+         font-size="10px"
+         fill="#000000"
+         id="text1499">output/read_counts.tsv</text>
+    </g>
+    <!-- count_reads&#45;&gt;output/read_counts.tsv -->
+    <g
+       id="edge46"
+       class="edge">
+      <title
+         id="title1502">count_reads-&gt;output/read_counts.tsv</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 829.7289,-87.8314 c -0.9625,7.7004 -2.1071,16.8571 -3.1768,25.4148"
+         id="path1504" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="823.0691,-62.7702 830.0151,-61.9019 825.3017,-52.4133 "
+         id="polygon1506" />
+    </g>
+  </g>
+</svg>
