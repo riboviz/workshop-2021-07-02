@@ -46,7 +46,6 @@ Abstract:
 Overview of riboviz workflow and features
 Hands-on session to run riboviz on a small dataset
  - Run on vignette
- - Run on downsampled dataset
  - Finding and interpreting riboviz output
 Overview of how to adapt to your own dataset
 Question-and-answer session
@@ -78,7 +77,6 @@ We aim for you to:
 * Overview of riboviz workflow and features
 * Hands-on session to run riboviz on a small dataset
   - Run on built-in "vignette" data
-  - Run on downsampled dataset
   - Finding and interpreting riboviz output
 * Overview of how to adapt to your own dataset
 * Question-and-answer session
@@ -443,4 +441,17 @@ Please complete the workshop evaluation survey online here:
 
 <div class="notes">
 ... slide notes ...
-</div>
+</div>  
+
+## Documentation  
+
+One of the benefits of riboviz is our comprehensive documentation for users, and developers. 
+
+This helps make it easier to get running with riboviz, as well as giving lots of information on how to configure and adapt riboviz for your dataset and to assist with your specific research questions.
+Key guides include:
+
+* [configuring riboviz](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-config.md) 
+* [detailed guide to how the riboviz workflow operates](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-operation.md)
+* [how to run the vignette and check results](https://github.com/riboviz/riboviz/blob/main/docs/user/run-vignette.md)
+* [step-by-step how to run the main workflow](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-run-nextflow.md) 
+* [a range of developer guides to assist contributors](https://github.com/riboviz/riboviz/tree/main/docs/developer)
