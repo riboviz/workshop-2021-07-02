@@ -1,6 +1,6 @@
 ---
-title: "Experts session: Hands-on Ribo-Seq workflows - RiboViz"
-author: "Riboviz Team"
+title: "Experts session: Hands-on Ribo-Seq workflows - riboviz"
+author: "riboviz Team"
 date: "02/07/2021"
 output:
   ioslides_presentation
@@ -39,7 +39,7 @@ slides > slide:not(.nobackground):after {
 
 Bio:
 
-Title: Experts session: Hands-on Ribo-Seq workflows - RiboViz
+Title: Experts session: Hands-on Ribo-Seq workflows - riboviz
 
 Abstract:
 
@@ -54,64 +54,29 @@ Evaluation
 
 </div>
 
-# Hands-on Ribo-Seq workflows - RiboViz
+# Hands-on Ribo-Seq workflows - riboviz
+
 
 
 <div class="notes">
 
-...
+This is a template for individual slide sections.
 
 </div>
 
-## Outline:
 
-* Overview of riboviz workflow and features
-* Hands-on session to run riboviz on a small dataset
-  - Run on vignette
-  - Run on downsampled dataset
-  - Finding and interpreting riboviz output
-* Overview of how to adapt to your own dataset
-* Question-and-answer session
-* Evaluation
+## Goals of this session
+
+We aim for you to:
+
+* Understand what riboviz does and if it would work for your needs
+* Succeed in running riboviz on small datasets
+* Know where to start on getting riboviz to work on new data
+
 
 
 
 # Overview of riboviz workflow and features
-
-<div class="notes">
-
-Short slide presentation that includes:
- - goals of this workshop session
- - goals of riboviz
- - mention key design decisions
-    - nextflow
-    - transcriptome-centric 
-    - h5 file 
-    - standard file outputs of most other things (bam, bedgraph, flat .txt) 
-    - apologize that we do not currently have RNA-seq in parallel
- - overview of the workflow, i.e. what happens
- - describe key ingredients 
-    - data in fastq format
-    - annotation files 
-    - configuration file 
-    - mention that we can deal with multiplexed input but do not get into detail
-
-Next: move to hands-on
-
-</div>
-
-## riboviz workflow 
-
-<div class="notes">
-... slide notes ...
-</div>
-
-## riboviz features 
-
-<div class="notes">
-... slide notes ...
-</div>
-
 
 
 # Hands-on session to run riboviz on a small dataset
