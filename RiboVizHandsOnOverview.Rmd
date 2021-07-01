@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <script>
     $(document).ready(function() {
-      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"bit.ly/..."></footer>');
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Hands-on Ribo-Seq workflows - riboviz"></footer>');
     })
 </script>
 
@@ -115,8 +115,8 @@ Next: move to hands-on
 * end-to-end processing of Ribo-seq data
   - raw data through to useful figures
 * flexible and robust
-  - over library prep strategies (multiplexed, UMIs)
-  - over organisms (bacteria, yeast, human, ...)
+  - across library prep strategies (multiplexed, UMIs)
+  - across organisms (bacteria, yeast, human, ...)
   - easy to extend
 * transcript- or ORF-centric
   - splicing is a different problem
@@ -278,18 +278,6 @@ knitr::include_graphics("https://raw.githubusercontent.com/riboviz/workflows/mai
 </div>
 
 
-## riboviz workflow in detail, sample focus
-
-<div class="centered">
-```{r, out.width = "300"}
-knitr::include_graphics("img/workflow_bysample.svg")
-``` 
-</div>  
-
-<div class="notes">
-Move quickly to explain with bigger fonts.
-</div>
-
 ## riboviz workflow by sample
 
 * **cutadapt** trim adapters
@@ -358,7 +346,9 @@ https://github.com/riboviz/example-datasets
 
 ## Example Datasets Repository can help
 
-This example-datasets repository is for the configuration files and genome/annotation files needed to run the riboviz ribosome profiling pipeline on specific datasets. It aims to:
+This example-datasets repository is for the configuration files and genome/annotation files needed to run the riboviz ribosome profiling pipeline on specific datasets. 
+
+It aims to:
 
 - provide specific example datasets for new users to try or to adapt
 - share up-to-date tested example datasets between the riboviz development team
@@ -368,7 +358,7 @@ https://github.com/riboviz/example-datasets
 ## Example datasets are collected by organism
 
 <div class="centered">
-```{r, out.width = "800"}
+```{r, out.width = "700"}
 knitr::include_graphics("img/example_datasets_fungi_screenshot.png")
 ``` 
 </div>
@@ -382,6 +372,10 @@ https://github.com/riboviz/example-datasets
 - UMI-tools allows flexible descriptions of barcodes and UMIs
   - `(?P<umi_1>.{8})` extracts an 8nt UMI from the 5' end of the read. 
   - `^(?P<umi_1>.{4}).+(?P<umi_2>.{4})(?P<cell_1>.{3})$` extracts a 3nt barcode from the 3' end of a read then extracts a 4nt UMI from the 5' end and a 4nt UMI from the 3' end.
+  
+<div class="notes"> 
+riboviz includes mini test datasets including UMIs and barcodes: https://github.com/riboviz/riboviz/blob/main/docs/user/run-dedup-demultiplex-examples.md
+</div>
 
 ## Transcript data needed for new organisms
 
@@ -404,7 +398,7 @@ This is the most unpredictable part, sadly. Budget 1-2 weeks.
 
 ## How to check the annotation
 
-Reality-check your fasta and gff match with `check_fasta_gff.py`:
+Reality-check your fasta and gff match with `check_fasta_gff.py` included with riboviz:
 
 * start codons
 * stop codons
@@ -413,6 +407,10 @@ Reality-check your fasta and gff match with `check_fasta_gff.py`:
 This flags big problems, like reverse-strand reads or intron inclusion.
 
 You can still run riboviz on an annotation with errors: it is descriptive not prescriptive.
+
+<div class="notes"> 
+For user documentation on how to do this, check here: https://github.com/riboviz/riboviz/blob/main/docs/user/check-fasta-gff.md
+</div>
 
 ## Contaminants
 
@@ -433,6 +431,15 @@ Ensembl, Silva rRNA database, FungiDB, VEUpathDB, Ensembl, BLAST, ...
 
 
 # Workshop Evaluation
+
+## Workshop Evaluation 
+
+We'd love to hear how you found this workshop, and find out about your first impressions of riboviz.
+
+Please complete the workshop evaluation survey online here: 
+
+[bit.ly/riboviz-workshop-survey](https://edinburgh.onlinesurveys.ac.uk/riboviz-workshop)
+
 
 <div class="notes">
 ... slide notes ...
