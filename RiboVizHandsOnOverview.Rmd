@@ -165,26 +165,45 @@ _Rather than having to create **bespoke code**, we can now use existing Nextflow
 * it works
   - on many datasets from many species
   - for many people
-* count reads and periodicity on pre-annotated ORFs
+* count reads and assess read frame on pre-annotated ORFs
 * quality control figures are informative
 * easy to add new data for same transcriptome/organism
 * multiplexed data & UMIs work smoothly
-* can trim 5' untemplated mismatches added by Superscript enzymes
+* can trim 5' untemplated mismatches added by Superscript reverse transcriptases
 * thoroughly documented
+
+## Documentation  
+
+Extensive documentation helps to 
+
+* get running with riboviz
+* configure and adapt riboviz for your dataset 
+* assist with your specific research questions
+
+Key guides include:
+
+* [configuring riboviz](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-config.md) 
+* [detailed guide to how the riboviz workflow operates](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-operation.md)
+* [how to run the vignette and check results](https://github.com/riboviz/riboviz/blob/main/docs/user/run-vignette.md)
+* [step-by-step how to run the main workflow](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-run-nextflow.md) 
+* [a range of developer guides to assist contributors](https://github.com/riboviz/riboviz/tree/main/docs/developer)
+
 
 ## What riboviz does not (yet) do (well)
 
 * overlapping ORFs
   - not tested on RNA viruses
 * discover new ORFs
-* multimapping reads
+* rigorously deal with multimapping reads
 * poor support for matched RNA-seq data
   - so export counts from riboviz for differential translation
 * new organisms/annotations are still painful.
 
 There are other tools.
 
-We are also interested in extending riboviz for **your** needs  
+We are also interested in extending riboviz for **your** needs:
+
+Put in a feature request!
 
 ## riboviz Workflow: Inputs
 
@@ -285,9 +304,9 @@ knitr::include_graphics("https://raw.githubusercontent.com/riboviz/workflows/mai
 * **samtools** sort and index bam file
 * **bedtools genomecov** output bedgraphs
 * **bam_to_h5.R** count reads by 5' position and read length
-* **generate_stats_figs.R** 3nt periodicity and read counts by ORF
+* **generate_stats_figs.R** read frame and read counts by ORF
 
-There are options, e.g. multiplexing.
+There are options, e.g. multiplexing, UMIs.
 
 # Hands-on session to run riboviz on a small dataset
 
@@ -306,12 +325,13 @@ We can talk through what the nextflow log means, where the output goes, and what
 
 ## Finding and interpreting riboviz output  
 
+Talk through the .html output for a sample from Guydosh & Green 2014.
+
 <div class="notes">
  - talk through where the files are
  - show and talk through .html output from the new downsampled dataset.
  - have one example from another full-size dataset to compare?
 </div>
-
 
 
 # How to adapt to your own dataset
@@ -338,11 +358,11 @@ For new organisms or strains:
 - transcript sequences and CDS maps
 - contaminant sequences
 
-Example Datasets is a place to start: 
+Build from the most relevant example dataset: 
 
 https://github.com/riboviz/example-datasets
 
-## Example Datasets Repository can help
+## example-datasets repository is where we add new datasets
 
 This example-datasets repository is for the configuration files and genome/annotation files needed to run the riboviz ribosome profiling pipeline on specific datasets. 
 
@@ -365,9 +385,9 @@ https://github.com/riboviz/example-datasets
 
 ## Read structure
 
-- Read the methods section
+- Read the methods section for adapters, barcodes, UMIs
 - If you did the library prep, you know this
-- UMI-tools allows flexible descriptions of barcodes and UMIs
+- [UMI-tools](https://github.com/CGATOxford/UMI-tools/) allows flexible descriptions of barcodes and UMIs
   - `(?P<umi_1>.{8})` extracts an 8nt UMI from the 5' end of the read. 
   - `^(?P<umi_1>.{4}).+(?P<umi_2>.{4})(?P<cell_1>.{3})$` extracts a 3nt barcode from the 3' end of a read then extracts a 4nt UMI from the 5' end and a 4nt UMI from the 3' end.
   
@@ -383,7 +403,7 @@ This is the most unpredictable part, sadly. Budget 1-2 weeks.
 
 *But*, these are available for few organisms, and usually have weird formatting problems.
 
-**OR padded ORFeome:** For each open reading frame of interest, the (spliced) ORF with fixed-with genomic sequence either side
+**OR padded ORFeome:** For each open reading frame of interest, the (spliced) ORF with fixed-with genomic sequence either side.
 
 
 ## Pick the annotation relevant to your biological question
@@ -420,15 +440,18 @@ Start with your favourite organism database or rRNA database.
 
 Ensembl, Silva rRNA database, FungiDB, VEUpathDB, Ensembl, BLAST, ...
 
-# Questions & Answer Session
 
-<div class="notes">
-... slide notes ...
-</div>
+# Summary, evaluation and Q&A
 
+## Summary of this session
 
+* Understand what riboviz does and if it would work for your needs
+  - end-to end processing with best practice software
+* Succeed in running riboviz on small datasets
+  - hands-on tutorial with vignette data
+* Know where to start on getting riboviz to work on new data
+  - documentation, key ingredients, example-datasets
 
-# Workshop Evaluation
 
 ## Workshop Evaluation 
 
@@ -438,20 +461,19 @@ Please complete the workshop evaluation survey online here:
 
 [bit.ly/riboviz-workshop-survey](https://edinburgh.onlinesurveys.ac.uk/riboviz-workshop)
 
+**Send specific feedback, bug reports, feature requests?**
+
+https://github.com/riboviz/riboviz/issues
+
+
+
+<div class="centered">
+<font size="6">
+Questions?
+</font>
+</div>
 
 <div class="notes">
 ... slide notes ...
 </div>  
 
-## Documentation  
-
-One of the benefits of riboviz is our comprehensive documentation for users, and developers. 
-
-This helps make it easier to get running with riboviz, as well as giving lots of information on how to configure and adapt riboviz for your dataset and to assist with your specific research questions.
-Key guides include:
-
-* [configuring riboviz](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-config.md) 
-* [detailed guide to how the riboviz workflow operates](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-operation.md)
-* [how to run the vignette and check results](https://github.com/riboviz/riboviz/blob/main/docs/user/run-vignette.md)
-* [step-by-step how to run the main workflow](https://github.com/riboviz/riboviz/blob/main/docs/user/prep-riboviz-run-nextflow.md) 
-* [a range of developer guides to assist contributors](https://github.com/riboviz/riboviz/tree/main/docs/developer)
