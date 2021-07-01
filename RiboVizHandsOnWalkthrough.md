@@ -1,6 +1,7 @@
 # Hands-on session to run RiboViz on a small dataset
 
 Experts session: Hands-on Ribo-Seq workflows - RiboViz
+123456789012345678901234567890123456789012345678901234567890
 
 Ribosome Profiling Workshop
 
@@ -24,7 +25,7 @@ I'll start with the RiboViz configuration file for the vignette.
 
 ```console
 $ cd riboviz
-$ more vignette/vignette_config.yaml
+$ less vignette/vignette_config.yaml
 ```
 
 All of RiboViz's configuration is contained within a single configuration file. This is in YAML format, consisting of configuration parameter names and their values. So, for example, we can see that we have defined:
@@ -83,7 +84,7 @@ $ source ../set-riboviz-env.sh
 
 You may have created yours in a different directory from mine.
 
-Depending on your operating system, the prompt may now show `(riboviz)` showing that the Miniconda Python `riboviz` environment is now active.
+Depending on your operating system and your Python environment, your prompt may now show `(riboviz)` showing that a Miniconda Python environment called `riboviz` is now active.
 
 **Question: Does anyone have any problems?**
 
@@ -95,7 +96,7 @@ We will now run RiboViz. It is good practice to validate the configuration befor
 $ nextflow run prep_riboviz.nf -params-file vignette/vignette_config.yaml --validate_only
 ```
 
-`nextflow run` is the command to run a Nextflow workflow, in this case our RiboViz workflow, `prep_riboviz.nf`. `-params-file` is the location of our RiboViz configuration file. `--validate_only` says that the workflow should only validate the configuration and then exit. Take care that you provide an underscore (`_`) not a dash (`-`) within the RiboViz parameter name. Unlike Nextflow's own parameters (which include dashes), custom parameters, such as those supported by RiboViz, need underscores if provided via the command-line.
+`nextflow run` is the command to run a Nextflow workflow, in this case our RiboViz workflow, `prep_riboviz.nf`. `-params-file` is the location of our RiboViz configuration file. `--validate_only` says that the workflow should only validate the configuration and then exit. Take care that you provide an underscore (`_`) not a dash (`-`) within the RiboViz parameter name and prefix this with a double-underscode (`--`) not a single underscore (`-`). RiboViz's own parameters are provided at the command-line in a different format to Nextflow's own parameters.
 
 All going well, you should see:
 
@@ -112,13 +113,13 @@ Validated configuration
 
 **Question: Does everyone see that? Does anyone have any problems?**
 
-This shows the Nextflow version and a unique auto-generated name and identifier for this run of RiboViz. Yours will differ from mine. `samples_dir`, `organisms_dir`, `data_dir` can be ignored. These are only used if using environment variables to specify the locations of input directories.
+This shows the Nextflow version and a unique auto-generated name for this run of RiboViz. Yours will differ from mine. `samples_dir`, `organisms_dir`, `data_dir` can be ignored. These are only used if you use environment variables to specify the locations of input directories. How to do this is described in the documentation.
 
 The `No such sample file (NotHere)` error can be ignored since we deliberately include a missing sample file in the "vignette" configuration.
 
-`Validated configuration` was printed even though one sample file could not be found. This is because the configuration specifies 3 sample files and could still successfully run if one of these is missing. If all 3 were missing then the validation would fail.
+`Validated configuration` was printed even though one sample file could not be found. This is because the configuration specifies 3 sample files and the workflow could still successfully run if one of these, or even two of these, were missing. If all 3 were missing then the validation would fail.
 
-If the configuration was problematic, then we'd sort that and revalidate the configuration. As our configuration is fine, we can now run the workflow.
+If the configuration was problematic, then what we'd want to do is fix it and revalidate the configuration. As our configuration is fine, we can now run the workflow.
 
 ### Run workflow
 
@@ -128,7 +129,7 @@ We run the workflow as follows:
 $ nextflow run -ansi-log false prep_riboviz.nf -params-file vignette/vignette_config.yaml
 ```
 
-This is the same invocation as previously, minus `--validate_only` and with an  `-ansi-log false` parameter which ensures that each invocation of a workflow step is displayed on a separate line.
+This is the same invocation as previously, minus `--validate_only` and with an  `-ansi-log false` parameter which ensures that each invocation of a sample-specific workflow step is displayed on a separate line.
 
 All going well, you should see:
 
@@ -174,11 +175,13 @@ Finished visualising sample: WT3AT
 Workflow finished! (OK)
 ```
 
-The workflow first builds HISAT2 indices for the ORF and rRNA FASTA files. It then, for each sample, cuts out sequencing library adapters, removes rRNA or other contaminating reads by alignment to the rRNA index files, aligns the remaining reads to the ORF index files, trims 5' mismatches from the resulting reads and removes reads with more than 2 mismatches, exports bedgraph files for plus and minus strands, makes length-sensitive alignments, and calculates summary statistics, and analyses and quality control plots for both RPF and mRNA datasets including estimated read counts, reads per base, and transcripts per million for each ORF in each sample. These transcripts per million are then collated across all samples and the number of reads (sequences) processed by specific stages is calculated.
-
-Each step in the workflow is implemented as a Nextflow process. Sample-independent processes are invoked once, for example `buildIndicesORF` and `buildIndicesrRNA`. Sample-specific processes, for example, `cutAdapters`, are invoked once per sample. Some invocations of processes are labelled with indices and sample names to make it clearer what that specific process is doing. For example, `collateTpms`, which aggregates data from all the samples, is labelled with all the sample identifiers.
-
 Again, the workflow run has a unique name, for my run above this was `modest_shaw`. Yours will differ. Take a note of the run name as we'll be using this again shortly.
+
+Each step in the workflow is implemented as a Nextflow process.
+
+Sample-independent processes are invoked once, for example `buildIndicesORF` and `buildIndicesrRNA`. Sample-specific processes, for example, `cutAdapters`, are invoked once per sample. Some invocations of processes are labelled with indices and sample names to make it clearer what that specific process is doing. For example, `collateTpms`, which aggregates data from all the samples, is labelled with all the sample identifiers.
+
+The workflow first builds HISAT2 indices for the ORF and rRNA FASTA files. It then, for each sample, cuts out sequencing library adapters, removes rRNA or other contaminating reads by alignment to the rRNA index files, aligns the remaining reads to the ORF index files, trims 5' mismatches and removes reads with more than 2 mismatches, exports bedgraph files for plus and minus strands, makes length-sensitive alignments, and calculates summary statistics, and analyses and quality control plots for both RPF and mRNA datasets including estimated read counts, reads per base, and transcripts per million for each ORF in each sample. These transcripts per million are then collated across all samples and the number of reads and alignments processed by specific steps is calculated.
 
 If we had not provided the `-ansi-log false` parameter then sample-specific steps would be combined within the display for a more succinct visualisation. For example we'd only see one `cutAdapters` step shown and this would show the status of running `cutadapt` on `WTnone` and then `WT3AT`, or vice versa. I prefer seeing each sample-specific step explicitly.
 
@@ -203,23 +206,9 @@ The outputs from running the RiboViz workflow, the analysis outputs, are put in 
 ```console
 $ ls vignette/output/
 read_counts.tsv  TPMs_collated.tsv  WT3AT  WTnone
-$ ls vignette/output/WTnone/
-3ntframe_bygene_filtered.tsv            pos_sp_rpf_norm_reads.pdf
-3ntframe_bygene.tsv                     pos_sp_rpf_norm_reads.tsv
-3ntframe_propbygene.pdf                 read_lengths.pdf
-3nt_periodicity.pdf                     read_lengths.tsv
-3nt_periodicity.tsv                     sequence_features.tsv
-codon_ribodens_gathered.tsv             startcodon_ribogridbar.pdf
-codon_ribodens.pdf                      startcodon_ribogrid.pdf
-codon_ribodens.tsv                      tpms.tsv
-features.pdf                            WTnone.bam
-gene_position_length_counts_5start.tsv  WTnone.bam.bai
-minus.bedgraph                          WTnone.h5
-plus.bedgraph                           WTnone_output_report.html
-pos_sp_nt_freq.tsv
 ```
 
-There is one output files subdirectory for each sample, in addition to data files holding data about all the samples. These latter are `TPMs_collated.tsv` which holds the transcripts per million from each sample and `read_counts.tsv` which summarises the number of reads processed at each step in the workflow for each sample.
+There is one output files subdirectory for each sample, in addition to data files holding data about all the samples. These latter are `TPMs_collated.tsv` which holds the transcripts per million from each sample and `read_counts.tsv` which summarises the number of reads and alignments processed at each step for each sample.
 
 Let's take a look at the outputs for a single sample:
 
@@ -244,7 +233,7 @@ There are myriad files with data from the processing of the sample. These includ
 
 However, we'll look at the HTML file, `WTnone_output_report.html`. This is a new feature for RiboViz 2.1 in which the outputs from the analysis of a sample are summarised as a browsable HTML document.
 
-Let's open that document within a web browser and look at its contents.
+Let's open that document within a web browser and look at its contents. All going well you should see some graphs. In particular you should see a Read lengths bar chart with a peak of 5000 counts at read length 28.
 
 **Question: Does anyone have any questions about the outputs?**
 
@@ -352,11 +341,15 @@ If our workflow failed and we wanted to see the names of the failed steps, we ca
 $ nextflow log modest_shaw -f name -filter "status == 'FAILED'"
 ```
 
-As all our steps succeeded, no steps are returned. 
+As all our steps succeeded, no steps are returned. But, to show this does work, let's see all the steps that successfully completed:
+
+```console
+$ nextflow log modest_shaw -f name -filter "status == 'COMPLETED'"
+```
 
 **In your own time, explore `nextflow log`. For more information see Nextflow [Tracing & visualisation](https://www.nextflow.io/docs/latest/tracing.html), `nextflow log -h` and to see the log fields available run `nextflow log -l`.**
 
-### Resuming a failed workflow
+### Resuming a workflow
 
 If a workflow fails then we can use Nextflow's "resume" feature which allows the workflow to restart from where it failed. This means that the workflow doesn't redo steps that it successfully completed. Though our workflow successfully completed, we can see how this works by rerunning the workflow and adding Nextflow's `-resume` flag:
 
@@ -402,11 +395,13 @@ Finished visualising sample: WT3AT
 Workflow finished! (OK)
 ```
 
-The invocation of each process has the same identifier as the previous run and the output now shows `Cached process`. This means that the workflow is reusing the outputs computed in the previous run. Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run.
+The invocation of each process has the same identifier as the previous run and the output now shows `Cached process`. This means that the workflow is reusing the outputs computed in the previous run.
+
+Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run.
 
 ### Nextflow's files 
 
-Now, what is this Nextflow-specific directory I've mentioned and where does `nextflow log` get its information from? When Nextflow runs, it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command to be invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
+Now, what is this Nextflow-specific directory I've mentioned earlier and where does `nextflow log` get its information from? When Nextflow runs, it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
 
 ```console
 $ ls work
@@ -440,12 +435,12 @@ trim.fq
 
 This is the actual directory within which Nextflow ran `cutadapt` on sample `WTnone`'s FASTQ file. The directory does not contain the FASTQ file itself, but, instead a symbolic link to the FASTQ file, which is in the directory specified by the `dir_in` parameter. However, this symbolic link makes it appear that the file itself is in this `work/` subdirectory. Again, the use of symbolic links avoids the need to have multiple copies of files.
 
-The output from applying `cutadapt` in the sample's FASTQ file, `trim.fq` is also in this directory.
+The output from applying `cutadapt` to the FASTQ file is also in this directory, in the file `trim.fq`.
 
 `.command.sh` is a bash script with the invocation of `cutadapt` that Nextflow ran and `.exitcode` contains the exit code from the command. `.command.out` and `.command.err` contain any output or error messages printed when the above command was run. The contents of these files were what we saw when running `nextflow log` to access the `script`, `exit`, `stdout` and `stderr` log fields earlier. I mentioned earlier that only the first few lines of the output and error messages captured were displayed by `nextflow log`. If we need to see their entire contents we can view these, for example:
 
 ```console
-$ cat /home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90/.command.out 
+$ less /home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90/.command.out
 This is cutadapt 1.18 with Python 3.7.6
 Command line parameters: --trim-n -O 1 -m 5 -a CTGTAGGCACC -o trim.fq SRR1042855_s1mi.fastq.gz -j 0
 Processing reads on 4 cores in single-end mode ...
@@ -457,9 +452,10 @@ Total reads processed:                 963,571
 Reads with adapters:                   958,926 (99.5%)
 Reads that were too short:              11,228 (1.2%
 ...
+$ less /home/ubuntu/riboviz/work/3d/5bcc6780442d00c216c5c1c116ea90/.command.err
 ```
 
-As the step-specific work directory contains everything that Nextflow used to run the command and as the command is in `.command.sh`, when troubleshooting, we can go into this directory and rerun the `.command.sh` bash script directly.
+As the step-specific work directory contains everything that Nextflow used to run the command and as the command itself is in `.command.sh`, we can go into this directory and rerun the `.command.sh` bash script directly, which can be very useful when troubleshooting/
 
 This `work/` directory is used by Nextflow to support its "resume" feature. If you delete the `work/` folder then the `-resume` flag has no effect and the whole workflow will be rerun.
 
@@ -467,10 +463,49 @@ This `work/` directory is used by Nextflow to support its "resume" feature. If y
 
 ---
 
+## Resuming a workflow
+
+**If time permits.**
+
+Let's revisit resuming a workflow in the presence of an additional sample. So, edit `vignette/vignette_config.yaml`. I'll use `nano`. You may wish to use your editor of choice.
+
+```console
+$ nano vignette/vignette_config.yaml 
+```
+
+Copy the line for the sample `WT3AT` and edit this to add a new line for a `Workshop` sample i.e. the contents of `fq_files` becomes:
+
+```yaml
+fq_files: # fastq files to be processed, relative to dir_in
+  WTnone: SRR1042855_s1mi.fastq.gz
+  WT3AT: SRR1042864_s1mi.fastq.gz
+  Workshop: SRR1042864_s1mi.fastq.gz
+  NotHere: example_missing_file.fastq.gz # Test case for missing file
+```
+
+For the purposes of this demonstration, the fact that we have the same sample file with two different sample names does not matter. They will each be processed separately.
+
+Now, we can resume our workflow:
+
+```console
+$ nextflow run -ansi-log false prep_riboviz.nf -params-file vignette/vignette_config.yaml -resume
+```
+
+Notice that the indexing and samples-specific steps for `WTnone` and `WT3AT` are not re-executed, rather their cached outputs are re-used. Only the steps for our new sample, `Workshop` are executed plus the downstram, summary-related, steps, `collateTpms`, and `countReads`.
+
+If we now look at the output directory, we can see there is a directory for our new sample:
+
+```console
+$ ls vignette/output/
+read_counts.tsv  TPMs_collated.tsv  Workshop  WT3AT  WTnone
+```
+
+---
+
 ## Questions
 
 **Question: Does anyone have any questions about what has been covered in this session?**
 
-Full information on configuring and running RiboViz is available within our Git repository, [riboviz/riboviz](https://github.com/riboviz/riboviz), on GitHub. As I mentioned previously, to complement RiboViz, we provide a [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository on GitHub which is a library of configuration files produced by the RiboViz project that have been run on full-size datasets for various organisms. You are encouraged to explore these and try these out and contributions of configurations for new datasets are most welcome.
+Full information on configuring and running RiboViz is available within our Git repository, [riboviz/riboviz](https://github.com/riboviz/riboviz), on GitHub. As I mentioned previously, to complement RiboViz, we provide a [riboviz/example-datasets](https://github.com/riboviz/example-datasets) repository on GitHub. This is a library of configuration files produced by the RiboViz project that have been run on full-size datasets for various organisms. You are encouraged to explore these and try these out. Contributions of configurations for new datasets are most welcome.
 
 Thank you!
