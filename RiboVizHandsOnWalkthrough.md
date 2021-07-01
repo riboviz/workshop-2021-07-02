@@ -349,7 +349,9 @@ $ nextflow log modest_shaw -f name -filter "status == 'COMPLETED'"
 
 **In your own time, explore `nextflow log`. For more information see Nextflow [Tracing & visualisation](https://www.nextflow.io/docs/latest/tracing.html), `nextflow log -h` and to see the log fields available run `nextflow log -l`.**
 
-### Resuming a workflow
+---
+
+## Resuming a workflow
 
 If a workflow fails then we can use Nextflow's "resume" feature which allows the workflow to restart from where it failed. This means that the workflow doesn't redo steps that it successfully completed. Though our workflow successfully completed, we can see how this works by rerunning the workflow and adding Nextflow's `-resume` flag:
 
@@ -399,7 +401,9 @@ The invocation of each process has the same identifier as the previous run and t
 
 Similarly, if we were to add an additional sample file to the configuration and rerun the workflow in this way then only the steps relating to the additional sample would be run.
 
-### Nextflow's files 
+---
+
+## Nextflow's files 
 
 Now, what is this Nextflow-specific directory I've mentioned earlier and where does `nextflow log` get its information from? When Nextflow runs, it creates a unique directory for every step in the workflow. This directory contains the input files to the step, the command invoked at that step and the output files from that step. These are created within a `work/` directory. Let's take a look:
 
@@ -463,7 +467,7 @@ This `work/` directory is used by Nextflow to support its "resume" feature. If y
 
 ---
 
-## Resuming a workflow
+## Resuming a workflow revisited
 
 **If time permits.**
 
