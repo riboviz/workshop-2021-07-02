@@ -1,7 +1,6 @@
 # Hands-on session to run RiboViz on a small dataset
 
 Experts session: Hands-on Ribo-Seq workflows - RiboViz
-123456789012345678901234567890123456789012345678901234567890
 
 Ribosome Profiling Workshop
 
