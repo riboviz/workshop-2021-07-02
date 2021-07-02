@@ -1,6 +1,7 @@
 ---
 title: "Experts session: Hands-on Ribo-Seq workflows - riboviz"
-author: "riboviz Team"
+subtitle: "https://github.com/riboviz/riboviz"
+author: "Edward Wallace, Mike Jackson, Flic Anderson"
 date: "02/07/2021"
 output:
   ioslides_presentation
@@ -60,6 +61,18 @@ Evaluation
 
 ...
 
+</div>
+
+## Thank you!
+
+* BBSRC and NSF/BIO for funding
+* Software Sustainability Institute
+* The riboviz team:
+
+<div class="centered">
+```{r, out.width = "800"}
+knitr::include_graphics("img/riboviz2_biorxiv_authors_banner.png")
+``` 
 </div>
 
 
@@ -404,6 +417,14 @@ This is the most unpredictable part, sadly. Budget 1-2 weeks.
 *But*, these are available for few organisms, and usually have weird formatting problems.
 
 **OR padded ORFeome:** For each open reading frame of interest, the (spliced) ORF with fixed-with genomic sequence either side.
+
+## Genome, transcriptome, ORFeome
+
+<div class="centered">
+```{r, out.width = "720"}
+knitr::include_graphics("img/genome_transcriptome_orfeome_handdrawn.png")
+``` 
+</div>
 
 
 ## Pick the annotation relevant to your biological question
